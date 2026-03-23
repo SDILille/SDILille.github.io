@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html  lang="fr">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/faviconv2-128x128.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>404</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link href="assets/fonts/style.css" rel="stylesheet">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=oK9O45"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=oK9O45" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <section class="mbr-section article content1 cid-vej0VW9Slm" id="custom-html-9r">
+
+     
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Non Trouvée</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #373B65;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle geometric pattern overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(245, 176, 107, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(205, 205, 216, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(245, 176, 107, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Animated floating shapes */
+        .shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #F5B06B;
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 120px;
+            height: 120px;
+            border: 2px solid #CDCDD8;
+            transform: rotate(45deg);
+            top: 60%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            width: 60px;
+            height: 60px;
+            background: #F5B06B;
+            border-radius: 50%;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 10s;
+        }
+
+        .shape-4 {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #CDCDD8;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            top: 30%;
+            right: 20%;
+            animation-delay: 15s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, -30px) rotate(90deg);
+            }
+            50% {
+                transform: translate(-10px, 20px) rotate(180deg);
+            }
+            75% {
+                transform: translate(30px, 10px) rotate(270deg);
+            }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .error-code {
+            font-size: clamp(8rem, 20vw, 12rem);
+            font-weight: 900;
+            color: #CDCDD8;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -5px;
+        }
+
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: transparent;
+            -webkit-text-stroke: 2px #F5B06B;
+            opacity: 0.3;
+            transform: translate(5px, 5px);
+            z-index: -1;
+        }
+
+        .error-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: #F5B06B;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #F5B06B, transparent);
+            margin: 0 auto 2rem auto;
+            border-radius: 2px;
+        }
+
+        .error-message {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #CDCDD8;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #F5B06B;
+            color: #373B65;
+            box-shadow: 0 4px 15px rgba(245, 176, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 176, 107, 0.4);
+            background: #ffbc7d;
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #CDCDD8;
+            border: 2px solid #CDCDD8;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(205, 205, 216, 0.1);
+            border-color: #F5B06B;
+            color: #F5B06B;
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover .icon-home {
+            transform: translateX(-3px);
+        }
+
+        .btn:hover .icon-back {
+            transform: translateX(-3px);
+        }
+
+        /* Decorative corner elements */
+        .corner {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(245, 176, 107, 0.2);
+        }
+
+        .corner-tl {
+            top: 40px;
+            left: 40px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-br {
+            bottom: 40px;
+            right: 40px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .corner {
+                width: 40px;
+                height: 40px;
+            }
+
+            .corner-tl {
+                top: 20px;
+                left: 20px;
+            }
+
+            .corner-br {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Subtle glow animation for 404 */
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(245, 176, 107, 0.1);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(245, 176, 107, 0.2);
+            }
+        }
+
+        .error-code {
+            animation: glow 3s ease-in-out infinite;
+        }
+    </style>
+
+
+    <!-- Floating geometric shapes -->
+    <div class="shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Decorative corners -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-br"></div>
+
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Non Trouvée</h1>
+        <div class="divider"></div>
+        <p class="error-message">
+            La page que vous recherchez a peut-être été déplacée ou n'existe plus.
+        </p>
+        
+        <div class="button-group">
+            <a href="index.html" class="btn btn-primary">
+                <svg class="icon icon-home" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                Retour à l'accueil
+            </a>
+            <a href="javascript:history.back()" class="btn btn-secondary">
+                <svg class="icon icon-back" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Page Précédente
+            </a>
+        </div>
+    </div>
+
+
+</section><section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
+  <script>"use strict";if("loading"in HTMLImageElement.prototype){document.querySelectorAll('img[loading="lazy"]').forEach(e=>{e.src=e.dataset.src;if(e.getAttribute("style")){e.setAttribute("data-temp-style",e.getAttribute("style"))};if(e.getAttribute("data-aspectratio")){e.style.paddingTop=100*e.getAttribute("data-aspectratio")+"%";e.style.height=0;}e.onload=function(){if(e.getAttribute("data-temp-style")){e.setAttribute("style", e.getAttribute("data-temp-style"))}else{e.removeAttribute("style")};e.removeAttribute("data-temp-style")}})}else{const e=document.createElement("script");e.src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js";document.body.appendChild(e)}</script>
+</body>
+</html>

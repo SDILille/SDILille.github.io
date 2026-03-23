@@ -1,0 +1,15 @@
+@font-face {
+   font-family: 'Muli-Black';
+   font-display: swap;
+   src: url('Muli-Black/font.ttf');
+}
+@font-face {
+   font-family: 'Muli-Bold';
+   font-display: swap;
+   src: url('Muli-Bold/font.ttf');
+}
+@font-face {
+   font-family: 'Muli-Medium';
+   font-display: swap;
+   src: url('Muli-Medium/font.ttf');
+}
