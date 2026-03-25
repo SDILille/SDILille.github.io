@@ -9,9 +9,6 @@
 		<loc>https://sdilille.github.io/bibliographie.html</loc>
 	</url>
 	<url>
-		<loc>https://sdilille.github.io/questions.html</loc>
-	</url>
-	<url>
 		<loc>https://sdilille.github.io/mentions.html</loc>
 	</url>
 	<url>
@@ -19,5 +16,8 @@
 	</url>
 	<url>
 		<loc>https://sdilille.github.io/dialogue.html</loc>
+	</url>
+	<url>
+		<loc>https://sdilille.github.io/questions.html</loc>
 	</url>
 </urlset>
