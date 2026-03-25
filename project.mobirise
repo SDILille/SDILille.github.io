@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "sdi",
-    "currentPage": "dialogue.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -399,7 +399,7 @@
     "site_lang": "fr",
     "publishEditFolder": false,
     "uniqCompNum": 376,
-    "versionPublish": "6.1.12",
+    "versionPublish": "6.1.14",
     "imageResize": true,
     "favicon": "@PROJECT_PATH@/assets/images/faviconv2-128x128.png",
     "mbrsiteDomain": "itluc4oq0x",
