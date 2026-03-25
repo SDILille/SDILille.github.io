@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link href="assets/fonts/style.css" rel="stylesheet">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=qrg86n"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=qrg86n" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=HwyVFn"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=HwyVFn" type="text/css">
 
   
   
@@ -68,30 +68,11 @@
     
     
     <div class="container">
-        <div class="row">
+        <div class="row align-items-stretch">
             <!-- Colonne Facebook (gauche) -->
             <div class="col-12 col-lg-5 mb-4 mb-lg-0">
-                <style>
-                    .fb-wrapper {
-                        position: relative;
-                        width: 100%;
-                        background: #f5f5f5;
-                        border-radius: 12px;
-                        overflow: hidden;
-                        height: 600px;
-                    }
-                    
-                    .fb-wrapper iframe {
-                        width: 100%;
-                        height: 100%;
-                        display: block;
-                        border: none;
-                    }
-                </style>
-
-                <div class="fb-wrapper">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Finterreligieuxlille%2F&amp;tabs=timeline&amp;width=500&amp;height=700&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy" class="lazyload">
-                    </iframe>
+                <div class="fb-wrapper" id="fb-container">
+                    <!-- L'iframe sera injecté ici par JavaScript -->
                 </div>
             </div>
 
@@ -99,98 +80,6 @@
             <div class="col-12 col-lg-7">
                 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
                 
-                <style>
-                    .rss-container {
-                        background: #ffffff;
-                        border-radius: 12px;
-                        padding: 30px;
-                        height: 700px;
-                        overflow-y: auto;
-                        border: 1px solid #eee;
-                        font-family: 'Mulish', sans-serif;
-                    }
-                    
-                    .rss-header {
-                        margin-bottom: 30px;
-                        border-bottom: 3px solid #373365;
-                        padding-bottom: 15px;
-                    }
-                    
-                    .rss-header h2 {
-                        font-size: 22px;
-                        font-weight: 700;
-                        margin-bottom: 5px;
-                        color: #373365;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                    }
-                    
-                    .rss-header p {
-                        font-size: 14px;
-                        color: #666;
-                        margin: 0;
-                        text-transform: lowercase;
-                    }
-                    
-                    .rss-loading {
-                        text-align: center;
-                        padding: 40px;
-                        color: #999;
-                        font-family: 'Mulish', sans-serif;
-                    }
-                    
-                    .rss-error {
-                        background: #f8f9fa;
-                        padding: 20px;
-                        border-left: 4px solid #373365;
-                        color: #666;
-                        font-family: 'Mulish', sans-serif;
-                    }
-                    
-                    .rss-article {
-                        padding: 20px 0;
-                        border-bottom: 1px solid #eee;
-                    }
-                    
-                    .rss-article:last-child {
-                        border-bottom: none;
-                    }
-                    
-                    .rss-article h3 {
-                        font-size: 16px;
-                        font-weight: 700;
-                        margin-bottom: 10px;
-                        line-height: 1.4;
-                        text-transform: uppercase;
-                    }
-                    
-                    .rss-article a {
-                        color: #373365;
-                        text-decoration: none;
-                    }
-                    
-                    .rss-article a:hover {
-                        text-decoration: underline;
-                    }
-                    
-                    .rss-article p {
-                        font-size: 14px;
-                        color: #555;
-                        line-height: 1.6;
-                        margin-bottom: 10px;
-                        text-align: justify;
-                        text-transform: lowercase;
-                        font-weight: 400;
-                    }
-                    
-                    .rss-meta {
-                        font-size: 12px;
-                        color: #373365;
-                        text-transform: lowercase;
-                        font-weight: 600;
-                    }
-                </style>
-
                 <div class="rss-container">
                     <div class="rss-header">
                         <h2>CEF - Relations Catholiques-Musulmans</h2>
@@ -215,13 +104,13 @@
                             }
                             
                             let html = '';
-                            data.items.forEach(item => {
+                            data.items.slice(0, 6).forEach(item => {
                                 const title = item.title || 'Sans titre';
                                 const description = item.content || item.description || '';
                                 const link = item.link || '#';
                                 const pubDate = item.pubDate || '';
                                 
-                                const cleanDesc = description.replace(/<[^>]*>/g, '').substring(0, 200);
+                                const cleanDesc = description.replace(/<[^>]*>/g, '').substring(0, 180);
                                 
                                 let date = '';
                                 try {
@@ -234,8 +123,8 @@
                                 
                                 html += `
                                     <article class="rss-article">
-                                        <h3><a href="${link}" target="_blank">${title}</a></h3>
-                                        <p>${cleanDesc}${cleanDesc.length >= 200 ? '...' : ''}</p>
+                                        <h3><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>
+                                        <p>${cleanDesc}${cleanDesc.length >= 180 ? '...' : ''}</p>
                                         ${date ? `<div class="rss-meta">${date}</div>` : ''}
                                     </article>
                                 `;
@@ -245,16 +134,320 @@
                             container.classList.remove('rss-loading');
                             
                         } catch (error) {
-                            container.innerHTML = `<div class="rss-error">Impossible de charger le flux. Vérifiez votre connexion.</div>`;
-                            console.error('Erreur:', error);
+                            container.innerHTML = `<div class="rss-error">Impossible de charger le flux. <a href="https://relations-catholiques-musulmans.cef.fr/" target="_blank" rel="noopener noreferrer">Voir le site directement →</a></div>`;
+                            console.error('Erreur RSS:', error);
                         }
                     }
                     
-                    loadFeed();
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', loadFeed);
+                    } else {
+                        loadFeed();
+                    }
                 </script>
             </div>
         </div>
     </div>
+    
+    <style>
+        /* ===== FACEBOOK WRAPPER ===== */
+        .fb-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            background: #f5f5f5;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 500px;
+        }
+        
+        .fb-wrapper iframe {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+            border: none;
+            transform-origin: top left;
+        }
+        
+        /* ===== RSS CONTAINER ===== */
+        .rss-container {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            height: 500px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            font-family: 'Mulish', sans-serif;
+        }
+        
+        .rss-header {
+            margin-bottom: 25px;
+            border-bottom: 3px solid #373365;
+            padding-bottom: 15px;
+        }
+        
+        .rss-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #373365;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+        
+        .rss-header p {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+            text-transform: lowercase;
+        }
+        
+        .rss-loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-family: 'Mulish', sans-serif;
+            font-size: 14px;
+        }
+        
+        .rss-error {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #373365;
+            color: #666;
+            font-family: 'Mulish', sans-serif;
+            font-size: 14px;
+        }
+        
+        .rss-error a {
+            color: #373365;
+            text-decoration: underline;
+        }
+        
+        .rss-article {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .rss-article:last-child {
+            border-bottom: none;
+        }
+        
+        .rss-article h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+        
+        .rss-article a {
+            color: #373365;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .rss-article a:hover {
+            color: #5a4d9a;
+            text-decoration: underline;
+        }
+        
+        .rss-article p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            text-align: justify;
+            text-transform: lowercase;
+            font-weight: 400;
+        }
+        
+        .rss-meta {
+            font-size: 11px;
+            color: #373365;
+            text-transform: lowercase;
+            font-weight: 600;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 991px) {
+            .fb-wrapper, .rss-container {
+                height: 450px;
+            }
+            
+            .rss-container {
+                padding: 20px;
+            }
+            
+            .rss-header h2 {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .fb-wrapper, .rss-container {
+                height: 400px;
+            }
+            
+            .rss-container {
+                padding: 15px;
+            }
+            
+            .rss-header {
+                margin-bottom: 20px;
+            }
+            
+            .rss-header h2 {
+                font-size: 16px;
+                letter-spacing: 0.5px;
+            }
+            
+            .rss-article h3 {
+                font-size: 14px;
+            }
+            
+            .rss-article p {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            .fb-wrapper, .rss-container {
+                height: 350px;
+            }
+        }
+        
+        /* Empêcher le débordement horizontal */
+        .article15 {
+            overflow-x: hidden;
+        }
+        
+        .article15 .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+        .article15 [class*="col-"] {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        /* Scrollbar personnalisée pour RSS */
+        .rss-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .rss-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        .rss-container::-webkit-scrollbar-thumb {
+            background: #373365;
+            border-radius: 3px;
+        }
+        
+        .rss-container::-webkit-scrollbar-thumb:hover {
+            background: #5a4d9a;
+        }
+    </style>
+    
+    <!-- SCRIPT FACEBOOK RESPONSIVE -->
+    <script>
+        (function() {
+            const container = document.getElementById('fb-container');
+            let resizeTimeout;
+            let lastWidth = 0;
+            
+            function createFacebookIframe() {
+                const containerWidth = container.offsetWidth;
+                
+                // Éviter les re-rendus inutiles si la largeur n'a pas changé
+                if (containerWidth === lastWidth && container.querySelector('iframe')) {
+                    return;
+                }
+                
+                lastWidth = containerWidth;
+                
+                // Supprimer l'ancien iframe s'il existe
+                while (container.firstChild) {
+                    container.removeChild(container.firstChild);
+                }
+                
+                // Calculer la hauteur selon le viewport
+                let height = 500;
+                if (window.innerWidth <= 375) height = 350;
+                else if (window.innerWidth <= 767) height = 400;
+                else if (window.innerWidth <= 991) height = 450;
+                
+                // Facebook a une largeur max de 500px, donc on scale si nécessaire
+                let iframeWidth = containerWidth;
+                let scale = 1;
+                
+                if (containerWidth > 500) {
+                    iframeWidth = 500;
+                    scale = containerWidth / 500;
+                }
+                
+                // Créer le nouvel iframe
+                const iframe = document.createElement('iframe');
+                const fbUrl = 'https://www.facebook.com/plugins/page.php' +
+                    '?href=https%3A%2F%2Fwww.facebook.com%2Finterreligieuxlille%2F' +
+                    '&tabs=timeline' +
+                    '&width=' + iframeWidth +
+                    '&height=' + height +
+                    '&small_header=false' +
+                    '&adapt_container_width=true' +
+                    '&hide_cover=false' +
+                    '&show_facepile=true' +
+                    '&lazy=true';
+                
+                iframe.src = fbUrl;
+                iframe.width = iframeWidth;
+                iframe.height = height;
+                iframe.style.border = 'none';
+                iframe.style.overflow = 'hidden';
+                iframe.style.display = 'block';
+                iframe.scrolling = 'no';
+                iframe.frameBorder = '0';
+                iframe.allowFullscreen = 'true';
+                iframe.allow = 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share';
+                iframe.loading = 'lazy';
+                
+                // Appliquer le scale si nécessaire (pour les grands écrans)
+                if (scale > 1) {
+                    iframe.style.transform = 'scale(' + scale + ')';
+                    iframe.style.transformOrigin = 'top left';
+                    iframe.style.width = '500px';
+                } else {
+                    iframe.style.width = '100%';
+                }
+                
+                container.appendChild(iframe);
+            }
+            
+            // Créer l'iframe au chargement
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    setTimeout(createFacebookIframe, 100);
+                });
+            } else {
+                setTimeout(createFacebookIframe, 100);
+            }
+            
+            // Recréer l'iframe au redimensionnement (avec debounce)
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(createFacebookIframe, 250);
+            });
+            
+            // Recréer aussi sur changement d'orientation (mobile)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(createFacebookIframe, 300);
+            });
+        })();
+    </script>
 </section>
 
 <section data-bs-version="5.1" class="footer1 cid-veiPKZf3Xh" once="footers" id="footer1-9o">
