@@ -417,7 +417,7 @@
     "global_header_custom": "\n\n",
     "cookiesAlert": false,
     "pwa-switcher": false,
-    "publishChangesOnly": true,
+    "publishChangesOnly": false,
     "witsec-search": false,
     "witsec-mailform": false,
     "witsec-search-excluded-sections": "",
