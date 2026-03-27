@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link href="assets/fonts/style.css" rel="stylesheet">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=Ye1NPb"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=Ye1NPb" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=bs92av"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=bs92av" type="text/css">
 
   
   
@@ -56,7 +56,7 @@
 						<a class="nav-link link text-primary display-4" href="index.html">Découvrir</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link link text-primary dropdown-toggle display-4" href="https://mobiri.se" aria-expanded="false" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside">Connaître</a><div class="dropdown-menu" aria-labelledby="dropdown-524"><a class="text-primary dropdown-item display-4" href="formation.html">Formation</a><a class="text-primary dropdown-item display-4" href="bibliographie.html">Documentation</a></div>
+						<a class="nav-link link text-primary dropdown-toggle display-4" href="https://mobiri.se" aria-expanded="true" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside">Connaître</a><div class="dropdown-menu" aria-labelledby="dropdown-524"><a class="text-primary dropdown-item display-4" href="formation.html">Formation</a><a class="text-primary dropdown-item display-4" href="bibliographie.html">Documentation</a><a class="text-primary show dropdown-item display-4" href="calendrier.html">Calendrier</a></div>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link link text-primary dropdown-toggle show display-4" href="index.html" aria-expanded="false" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside">Dialoguer</a><div class="dropdown-menu show" aria-labelledby="dropdown-557" data-bs-popper="none"><a class="text-primary dropdown-item display-4" href="ensembleavecmarie.html">Les classes "Ensemble avec Marie"</a></div>
@@ -648,194 +648,20 @@
     </div>
 </section>
 
-<section data-bs-version="5.1" class="article07 cid-vd0iIrFPdY cid-ve7f7zbH1D" id="article07-8g">
-  
+<section data-bs-version="5.1" class="cid-vf5ao2zMy7" id="design-block-bi">
 
-  
-  
-  
+
+
+<div class="banner bg-banner">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="card col-md-12 col-lg-10 shadow rounded bg-white" style="background-color: rgb(255, 255, 255);">
-        <div class="card-wrapper">
-          <h3 class="card-title mbr-fonts-style mt-3 mb-4 display-2">
-            <strong id="titleIcons"></strong> Calendrier du dialogue
-          </h3>
-          
-          <div class="year-selector" id="buttons" style="text-align: center; margin: 20px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;"></div>
-          
-          <div id="content" style="margin-top: 20px;"></div>
-          
-          
-        </div>
+    <div class="row">
+      <div class="col-md-12">
+   <p class="mbr-text mbr-fonts-style display-1">Actualités<br></p>
       </div>
     </div>
   </div>
+</div>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
-
-    .article07 {
-      background-color: #ffffff;
-      color: #232323;
-      font-family: 'Mulish', sans-serif;
-      font-weight: 400;
-      line-height: 1.5;
-    }
-
-    .article07 .icon-svg {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      margin-right: 6px;
-      vertical-align: middle;
-    }
-
-    .article07 .year-selector button {
-      padding: 10px 15px;
-      border: 1px solid #373365;
-      border-radius: 4px;
-      cursor: pointer;
-      background: #ffffff;
-      color: #373365;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: 'Mulish', sans-serif;
-      transition: all 0.2s ease-in-out;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      word-break: break-word;
-    }
-    
-    .article07 .year-selector button:hover {
-      background: #373365;
-      color: #ffffff;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
-    }
-    
-    .article07 .year-selector button.active {
-      background: #373365;
-      color: #ffffff;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
-    }
-    
-    .article07 .calendar-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    
-    @media (max-width: 700px) {
-      .article07 .calendar-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    .article07 .calendar-card {
-      background: #f5f5f5;
-      padding: 20px;
-      border-radius: 4px;
-      border: 1px solid #edefea;
-    }
-    
-    .article07 .calendar-card h2 {
-      margin-bottom: 15px;
-      font-size: 18px;
-      margin-top: 0;
-      font-weight: 600;
-      color: #373365;
-      font-family: 'Mulish', sans-serif;
-      display: flex;
-      align-items: center;
-    }
-    
-    .article07 .calendar-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #edefea;
-      font-size: 14px;
-      gap: 10px;
-      color: #232323;
-      font-weight: 400;
-      font-family: 'Mulish', sans-serif;
-    }
-    
-    .article07 .calendar-item:last-child {
-      border-bottom: none;
-    }
-    
-    .article07 .calendar-date {
-      background: #f0eef8;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.85em;
-      white-space: nowrap;
-      flex-shrink: 0;
-      color: #373365;
-      font-weight: 600;
-      font-family: 'Mulish', sans-serif;
-    }
-  </style>
-
-  <script>
-    // Fonction pour créer une icône SVG croix droite
-    function getCrossIcon() {
-      return '<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="#373365" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line></svg>';
-    }
-
-    // Fonction pour créer une icône SVG lune/croissant
-    function getCrescentIcon() {
-      return '<svg class="icon-svg" viewBox="0 0 24 24" fill="#373365"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-    }
-
-    const cal = {
-      2026:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["18 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["29 mars","Rameaux"],["2 avril","Jeudi Saint"],["3 avril","Vendredi Saint"],["5 avril","Pâques"],["14 mai","Ascension"],["24 mai","Pentecôte"],["4 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["18 fév","Début Ramadan"],["15 mars","Laylat al-Qadr"],["20 mars","Aïd al-Fitr"],["27 mai","Aïd al-Adha"],["16 juil","Nouvel An Hijri"],["25 août","Mawlid"]]},
-      2027:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["10 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["21 mars","Rameaux"],["25 mars","Jeudi Saint"],["26 mars","Vendredi Saint"],["28 mars","Pâques"],["6 mai","Ascension"],["16 mai","Pentecôte"],["27 mai","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["8 fév","Début Ramadan"],["5 mars","Laylat al-Qadr"],["10 mars","Aïd al-Fitr"],["17 mai","Aïd al-Adha"],["6 juil","Nouvel An Hijri"],["15 août","Mawlid"]]},
-      2028:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["1er mars","Mercredi des Cendres"],["25 mars","Annonciation"],["9 avril","Rameaux"],["13 avril","Jeudi Saint"],["14 avril","Vendredi Saint"],["16 avril","Pâques"],["25 mai","Ascension"],["4 juin","Pentecôte"],["15 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["28 janv","Début Ramadan"],["23 fév","Laylat al-Qadr"],["27 fév","Aïd al-Fitr"],["5 mai","Aïd al-Adha"],["24 juin","Nouvel An Hijri"],["3 août","Mawlid"]]},
-      2029:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["14 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["25 mars","Rameaux"],["29 mars","Jeudi Saint"],["30 mars","Vendredi Saint"],["1er avril","Pâques"],["10 mai","Ascension"],["20 mai","Pentecôte"],["31 mai","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["16 janv","Début Ramadan"],["11 fév","Laylat al-Qadr"],["15 fév","Aïd al-Fitr"],["24 avril","Aïd al-Adha"],["13 juin","Nouvel An Hijri"],["23 juil","Mawlid"]]},
-      2030:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["6 mars","Mercredi des Cendres"],["25 mars","Annonciation"],["14 avril","Rameaux"],["18 avril","Jeudi Saint"],["19 avril","Vendredi Saint"],["21 avril","Pâques"],["30 mai","Ascension"],["9 juin","Pentecôte"],["20 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["5 janv","Début Ramadan"],["1er fév","Laylat al-Qadr"],["4 fév","Aïd al-Fitr"],["14 avril","Aïd al-Adha"],["3 juin","Nouvel An Hijri"],["12 juil","Mawlid"]]},
-      2031:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["26 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["6 avril","Rameaux"],["10 avril","Jeudi Saint"],["11 avril","Vendredi Saint"],["13 avril","Pâques"],["22 mai","Ascension"],["1er juin","Pentecôte"],["12 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["26 déc 2030","Début Ramadan"],["19 janv","Laylat al-Qadr"],["24 janv","Aïd al-Fitr"],["3 avril","Aïd al-Adha"],["23 mai","Nouvel An Hijri"],["1er juil","Mawlid"]]},
-      2032:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["11 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["28 mars","Rameaux"],["1er avril","Jeudi Saint"],["2 avril","Vendredi Saint"],["4 avril","Pâques"],["13 mai","Ascension"],["23 mai","Pentecôte"],["3 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["14 déc 2031","Début Ramadan"],["8 janv","Laylat al-Qadr"],["13 janv","Aïd al-Fitr"],["22 mars","Aïd al-Adha"],["12 mai","Nouvel An Hijri"],["20 juin","Mawlid"]]},
-      2033:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["2 mars","Mercredi des Cendres"],["25 mars","Annonciation"],["10 avril","Rameaux"],["14 avril","Jeudi Saint"],["15 avril","Vendredi Saint"],["17 avril","Pâques"],["26 mai","Ascension"],["5 juin","Pentecôte"],["16 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["3 déc 2032","Début Ramadan"],["28 déc 2032","Laylat al-Qadr"],["2 janv","Aïd al-Fitr"],["11 mars","Aïd al-Adha"],["1er mai","Nouvel An Hijri"],["9 juin","Mawlid"]]},
-      2034:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["22 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["2 avril","Rameaux"],["6 avril","Jeudi Saint"],["7 avril","Vendredi Saint"],["9 avril","Pâques"],["18 mai","Ascension"],["28 mai","Pentecôte"],["8 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["22 nov 2033","Début Ramadan"],["17 déc 2033","Laylat al-Qadr"],["21 déc 2033","Aïd al-Fitr"],["28 fév","Aïd al-Adha"],["20 avril","Nouvel An Hijri"],["29 mai","Mawlid"]]},
-      2035:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["7 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["18 mars","Rameaux"],["22 mars","Jeudi Saint"],["23 mars","Vendredi Saint"],["25 mars","Pâques"],["3 mai","Ascension"],["13 mai","Pentecôte"],["24 mai","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["11 nov 2034","Début Ramadan"],["6 déc 2034","Laylat al-Qadr"],["10 déc 2034","Aïd al-Fitr"],["17 fév","Aïd al-Adha"],["10 avril","Nouvel An Hijri"],["19 mai","Mawlid"]]},
-      2036:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["27 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["6 avril","Rameaux"],["10 avril","Jeudi Saint"],["11 avril","Vendredi Saint"],["13 avril","Pâques"],["22 mai","Ascension"],["1er juin","Pentecôte"],["12 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["31 oct 2035","Début Ramadan"],["25 nov 2035","Laylat al-Qadr"],["29 nov 2035","Aïd al-Fitr"],["7 fév","Aïd al-Adha"],["29 mars","Nouvel An Hijri"],["7 mai","Mawlid"]]},
-      2037:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["18 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["29 mars","Rameaux"],["2 avril","Jeudi Saint"],["3 avril","Vendredi Saint"],["5 avril","Pâques"],["14 mai","Ascension"],["24 mai","Pentecôte"],["4 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["20 oct 2036","Début Ramadan"],["14 nov 2036","Laylat al-Qadr"],["18 nov 2036","Aïd al-Fitr"],["27 janv","Aïd al-Adha"],["19 mars","Nouvel An Hijri"],["27 avril","Mawlid"]]}
-    };
-
-    function show(y) {
-      document.querySelectorAll('.year-selector button').forEach(b => b.classList.remove('active'));
-      const clickedBtn = document.querySelector(`.year-selector button[data-year="${y}"]`);
-      if (clickedBtn) clickedBtn.classList.add('active');
-      const d = cal[y];
-      document.getElementById('content').innerHTML = '<div class="calendar-grid"><div class="calendar-card catholic"><h2>' + getCrossIcon() + 'Catholicisme</h2>' + d.c.map(x => '<div class="calendar-item"><span>' + x[1] + '</span><span class="calendar-date">' + x[0] + '</span></div>').join('') + '</div><div class="calendar-card islam"><h2>' + getCrescentIcon() + 'Islam</h2>' + d.i.map(x => '<div class="calendar-item"><span>' + x[1] + '</span><span class="calendar-date">' + x[0] + '</span></div>').join('') + '</div></div>';
-    }
-
-    // Initialiser le titre avec les icônes SVG
-    document.getElementById('titleIcons').innerHTML = getCrossIcon() + getCrescentIcon();
-
-    const currentYear = new Date().getFullYear();
-    const startYear = 2026;
-    const endYear = 2037;
-    
-    let defaultYear = currentYear;
-    if (currentYear < startYear) {
-      defaultYear = startYear;
-    } else if (currentYear > endYear) {
-      defaultYear = endYear;
-    }
-
-    let btns = '';
-    for(let y = startYear; y <= endYear; y++) {
-      btns += '<button data-year="' + y + '" ' + (y === defaultYear ? 'class="active" ' : '') + 'onclick="show(' + y + ')">' + y + '</button>';
-    }
-    document.getElementById('buttons').innerHTML = btns;
-    show(defaultYear);
-  </script>
 </section>
 
 <section data-bs-version="5.1" class="article15 cid-vf4mbdNaNE" id="article15-bb">
