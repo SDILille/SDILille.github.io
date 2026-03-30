@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "sdi",
-    "currentPage": "groupes.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -1291,6 +1291,17 @@
             "& when (@bg-type = 'color')": {
               "background-color": "@bg-value"
             },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)",
+              "background-size": "cover",
+              "background-position": "center"
+            },
+            "& when (@overlay)": {
+              ".mbr-overlay": {
+                "background-color": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
             ".banner": {
               "z-index": "10",
               "height": "499px"
@@ -1301,8 +1312,10 @@
               "width": "100%"
             },
             ".bg-banner": {
-              "padding": "(@paddingTop * 15px)",
-              "height": "auto!important",
+              "background-color": "@bgbanner",
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)",
+              "height": "auto !important",
               "position": "relative"
             },
             ".bg-banner:after": {
@@ -1314,7 +1327,7 @@
               "width": "0",
               "position": "absolute",
               "pointer-events": "none",
-              "border-top-color": "@bg-value",
+              "border-top-color": "@bgbanner",
               "border-width": "20px 30px",
               "margin-left": "-30px"
             },
@@ -1322,13 +1335,13 @@
               "margin": "0 !important"
             },
             ".banner h1": {
-              "font-weight": "700!important",
+              "font-weight": "700 !important",
               "font-size": "40px"
             },
             ".banner h1:last-child": {
               "margin": "0"
             },
-            "H1": {
+            "h1": {
               "color": "#ffffff"
             },
             ".mbr-text": {
@@ -1336,7 +1349,7 @@
               "text-align": "center"
             }
           },
-          "_customHTML": "<section data-bs-version=\"5.1\" class plugins=\"breadcrumbs5\" group=\"Dahomy\">\n\n<mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <header>Size</header>\n    <input type=\"color\" title=\"BG Banner\" value=\"#373365\" name=\"bgbanner\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"1\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\">\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n    <input type=\"color\" title=\"Background Color\" value=\"#373365\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n</mbr-parameters>\n\n<div class=\"banner bg-banner\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n   <p class=\"mbr-text mbr-fonts-style\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-1\">Les conditions d'un dialogue authentique<br></p>\n      </div>\n    </div>\n  </div>\n</div>\n\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class plugins=\"breadcrumbs5\" group=\"Dahomy\">\n\n  <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n    <header>Size</header>\n    <input type=\"color\" title=\"BG Banner\" value=\"#373365\" name=\"bgbanner\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"1\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\">\n\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"color\" title=\"Background Color\" value=\"#373365\" selected>\n    </fieldset>\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n  </mbr-parameters>\n\n  <div class=\"banner bg-banner\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <p class=\"mbr-text mbr-fonts-style\" data-app-selector=\".mbr-text\" mbr-theme-style=\"display-1\">\n            Les conditions d'un dialogue authentique\n          </p>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</section>",
           "_anchor": "design-block-ay",
           "_isUserblock": true,
           "_cid": "veTGsEhJz7",
@@ -9159,7 +9172,7 @@
     },
     "groupes.html": {
       "settings": {
-        "title": "groupesdedialogue",
+        "title": "groupes de dialogue",
         "order": "5"
       },
       "components": [

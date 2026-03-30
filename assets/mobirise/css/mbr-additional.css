@@ -1393,6 +1393,10 @@ a {
   padding-bottom: 0px;
   background-color: #373365;
 }
+.cid-veTGsEhJz7 .mbr-overlay {
+  background-color: #232323;
+  opacity: 0.6;
+}
 .cid-veTGsEhJz7 .banner {
   z-index: 10;
   height: 499px;
@@ -1403,8 +1407,10 @@ a {
   width: 100%;
 }
 .cid-veTGsEhJz7 .bg-banner {
-  padding: 15px;
-  height: auto!important;
+  background-color: #373365;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  height: auto !important;
   position: relative;
 }
 .cid-veTGsEhJz7 .bg-banner:after {
@@ -1424,13 +1430,13 @@ a {
   margin: 0 !important;
 }
 .cid-veTGsEhJz7 .banner h1 {
-  font-weight: 700!important;
+  font-weight: 700 !important;
   font-size: 40px;
 }
 .cid-veTGsEhJz7 .banner h1:last-child {
   margin: 0;
 }
-.cid-veTGsEhJz7 H1 {
+.cid-veTGsEhJz7 h1 {
   color: #ffffff;
 }
 .cid-veTGsEhJz7 .mbr-text {
