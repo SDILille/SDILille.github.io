@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "sdi",
-    "currentPage": "groupes.html",
+    "currentPage": "index.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -1504,6 +1504,9 @@
               }
             },
             ".card-title, .card-box": {
+              "color": "#373365"
+            },
+            ".text-box .mbr-text": {
               "color": "#373365"
             }
           },
