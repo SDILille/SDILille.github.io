@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "sdi",
-    "currentPage": "ensembleavecmarie.html",
+    "currentPage": "verset.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -402,7 +402,7 @@
     "versionPublish": "6.1.14",
     "imageResize": true,
     "favicon": "@PROJECT_PATH@/assets/images/faviconv2-128x128.png",
-    "mbrsiteDomain": "j4fh61ry1o",
+    "mbrsiteDomain": "srrfmpgvlp",
     "usedWebp": true,
     "robotsSwitcher": true,
     "sitemapSwitcher": true,
@@ -417,12 +417,13 @@
     "global_header_custom": "<!-- Ajouter dans <head> -->\n<meta name=\"description\" content=\"Service de Dialogue Interreligieux du Diocèse de Lille - Ressources pour le dialogue islamo-catholique, formation, documentation et actualités.\">\n<meta name=\"keywords\" content=\"dialogue interreligieux, islam, catholicisme, Lille, diocèse, Nostra Aetate, relations catholiques-musulmans\">\n\n<!-- Open Graph pour les réseaux sociaux -->\n<meta property=\"og:title\" content=\"Dialogue Islamo-Catholique - Diocèse de Lille\">\n<meta property=\"og:description\" content=\"Ressources pour favoriser la connaissance mutuelle entre chrétiens et musulmans\">\n<meta property=\"og:image\" content=\"https://sdilille.github.io/assets/images/design20sans20titre2010-1023x682.webp\">\n<meta property=\"og:url\" content=\"https://sdilille.github.io/\">\n<meta property=\"og:type\" content=\"website\">",
     "cookiesAlert": false,
     "pwa-switcher": false,
-    "publishChangesOnly": true,
+    "publishChangesOnly": false,
     "witsec-search": false,
     "witsec-mailform": false,
     "witsec-search-excluded-sections": "",
     "witsec-search-excluded-pages": "404.html",
-    "chatbutton": {}
+    "chatbutton": {},
+    "google-analytics": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-MQBVJ2RT5H\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-MQBVJ2RT5H');\n</script>"
   },
   "pages": {
     "index.html": {
