@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "sdi",
-    "currentPage": "verset.html",
+    "currentPage": "groupes.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -10019,16 +10019,18 @@
             },
             ".card-title, .card-box": {
               "text-align": "left",
-              "color": "#000000"
+              "color": "#373365"
             },
             ".mbr-section-subtitle": {
               "text-align": "left"
             },
             ".mbr-text": {
-              "text-align": "left"
+              "text-align": "left",
+              "color": "#373365"
             },
             ".mbr-card-title": {
-              "text-align": "left"
+              "text-align": "left",
+              "color": "#373365"
             }
           },
           "_name": "list04",
