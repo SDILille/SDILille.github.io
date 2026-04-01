@@ -6373,7 +6373,13 @@ a {
 }
 .cid-vf3T4YazCu img {
   width: 100%;
-  height: 100%;
+  object-fit: cover;
+  height: 30rem;
+}
+@media (max-width: 767px) {
+  .cid-vf3T4YazCu img {
+    height: 15rem;
+  }
 }
 .cid-vf3RSrWLBx {
   padding-top: 5rem;
