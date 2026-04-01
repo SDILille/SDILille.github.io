@@ -3061,8 +3061,89 @@ a {
     padding: 1rem;
   }
 }
+.cid-vfynT8JcJU {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #ffffff;
+}
+.cid-vfynT8JcJU .content_block {
+  padding: 60px 15px;
+  padding-right: 20%;
+}
+.cid-vfynT8JcJU .content_block:hover .mbr-section-title a {
+  color: #f5b06b !important;
+}
+.cid-vfynT8JcJU .card_topic,
+.cid-vfynT8JcJU .mbr-section-subtitle {
+  margin-bottom: 12px;
+}
+.cid-vfynT8JcJU .card_topic .mbr-iconfont {
+  font-size: 1rem;
+  color: #f5b06b;
+  margin-left: 10px;
+  margin-right: 3px;
+}
+.cid-vfynT8JcJU .image {
+  position: relative;
+}
+.cid-vfynT8JcJU .image:before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  right: -1px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+  z-index: 1;
+  pointer-events: none;
+}
+.cid-vfynT8JcJU .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cid-vfynT8JcJU .mbr-section-btn .btn-secondary-outline {
+  padding: 3px 0;
+  margin-bottom: 0;
+  border: none !important;
+  background-color: transparent !important;
+}
+.cid-vfynT8JcJU .mbr-section-btn .btn-secondary-outline:hover,
+.cid-vfynT8JcJU .mbr-section-btn .btn-secondary-outline .active,
+.cid-vfynT8JcJU .mbr-section-btn .btn-secondary-outline:focus {
+  color: #373365 !important;
+}
+.cid-vfynT8JcJU .category_content {
+  opacity: .8;
+}
+@media (max-width: 991px) {
+  .cid-vfynT8JcJU .content_block {
+    padding: 30px 15px;
+  }
+  .cid-vfynT8JcJU .mbr-figure {
+    padding: 0;
+  }
+  .cid-vfynT8JcJU .image:before {
+    width: 100%;
+    height: 60%;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.99));
+  }
+}
+.cid-vfynT8JcJU .mbr-text,
+.cid-vfynT8JcJU .mbr-section-btn {
+  text-align: justify;
+  color: #373365;
+}
+.cid-vfynT8JcJU .mbr-section-title {
+  color: #373365;
+}
+.cid-vfynT8JcJU .category_estimate,
+.cid-vfynT8JcJU .card_topic {
+  color: #373365;
+}
 .cid-vcT2lcPehi {
-  padding-top: 8rem;
+  padding-top: 2rem;
   padding-bottom: 3rem;
   background-color: #ffffff;
 }
