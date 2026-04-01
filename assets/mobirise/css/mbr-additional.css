@@ -6235,7 +6235,7 @@ a {
   }
 }
 .cid-vfxHYNpL22 {
-  padding-top: 4rem;
+  padding-top: 0rem;
   padding-bottom: 0rem;
   background-color: #ffffff;
 }
@@ -6318,6 +6318,34 @@ a {
 .cid-vfxHYNpL22 .category_estimate,
 .cid-vfxHYNpL22 .card_topic {
   color: #373365;
+}
+.cid-vfy0lILajw {
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+  background-color: #ffffff;
+}
+.cid-vfy0lILajw .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-vfy0lILajw .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-vfy0lILajw .mbr-section-title {
+  color: #373365;
+  text-align: justify;
+}
+.cid-vfy0lILajw .mbr-section-subtitle {
+  color: #373365;
+  text-align: justify;
+}
+.cid-vfy0lILajw .mbr-section-subtitle DIV {
+  text-align: justify;
 }
 .cid-vf3T4YazCu {
   background-color: #ffffff;
@@ -8499,15 +8527,13 @@ a {
   }
 }
 .cid-vfxKqPJPaq {
-  padding-top: 4rem;
+  padding-top: 0rem;
   padding-bottom: 0rem;
   background-color: #ffffff;
 }
 .cid-vfxKqPJPaq .content_block {
   padding: 60px 15px;
   padding-right: 20%;
-  padding-left: 20%;
-  padding-right: 15px;
 }
 .cid-vfxKqPJPaq .content_block:hover .mbr-section-title a {
   color: #f5b06b !important;
@@ -8534,8 +8560,6 @@ a {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
   z-index: 1;
   pointer-events: none;
-  left: 0;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);
 }
 .cid-vfxKqPJPaq .image img {
   width: 100%;
@@ -8581,6 +8605,31 @@ a {
 }
 .cid-vfxKqPJPaq .category_estimate,
 .cid-vfxKqPJPaq .card_topic {
+  color: #373365;
+}
+.cid-vfy2baGsmJ {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #ffffff;
+}
+.cid-vfy2baGsmJ .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-vfy2baGsmJ .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-vfy2baGsmJ .mbr-section-subtitle {
+  text-align: justify;
+  color: #373365;
+}
+.cid-vfy2baGsmJ .mbr-section-title {
+  text-align: justify;
   color: #373365;
 }
 .cid-vfqClAbDcm {
