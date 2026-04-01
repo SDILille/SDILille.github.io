@@ -1312,7 +1312,7 @@ a {
   }
 }
 .cid-vcWo7ASJ5U {
-  padding-top: 6rem;
+  padding-top: 0rem;
   padding-bottom: 0rem;
   background-color: #ffffff;
 }
@@ -1679,7 +1679,7 @@ a {
 .cid-veTe4NhP0l {
   padding-top: 5rem;
   padding-bottom: 3rem;
-  background-color: #373365;
+  background-image: url("../../../assets/images/foo-1-1366x768.webp");
 }
 .cid-veTe4NhP0l .mbr-fallback-image.disabled {
   display: none;
