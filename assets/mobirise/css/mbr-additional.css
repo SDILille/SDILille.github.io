@@ -1319,6 +1319,8 @@ a {
 .cid-vcWo7ASJ5U .content_block {
   padding: 60px 15px;
   padding-right: 20%;
+  padding-left: 20%;
+  padding-right: 15px;
 }
 .cid-vcWo7ASJ5U .content_block:hover .mbr-section-title a {
   color: #f5b06b !important;
@@ -1345,6 +1347,8 @@ a {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
   z-index: 1;
   pointer-events: none;
+  left: 0;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);
 }
 .cid-vcWo7ASJ5U .image img {
   width: 100%;
