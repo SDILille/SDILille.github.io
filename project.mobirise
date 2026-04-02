@@ -3829,13 +3829,15 @@
               "color": "#373365"
             },
             ".item-title": {
-              "text-align": "left"
+              "text-align": "left",
+              "color": "#373365"
             },
             ".item-subtitle": {
               "text-align": "left"
             },
             ".mbr-text, .item .mbr-section-btn": {
-              "text-align": "justify"
+              "text-align": "justify",
+              "color": "#373365"
             },
             ".content-head": {
               "max-width": "800px"
