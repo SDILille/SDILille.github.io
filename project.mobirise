@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "sdi",
-    "currentPage": "index.html",
+    "currentPage": "formation.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -398,7 +398,7 @@
     "spellingSwitch": true,
     "site_lang": "fr",
     "publishEditFolder": false,
-    "uniqCompNum": 458,
+    "uniqCompNum": 459,
     "versionPublish": "6.1.14",
     "imageResize": true,
     "favicon": "@PROJECT_PATH@/assets/images/faviconv2-128x128.png",
@@ -2752,6 +2752,106 @@
           "_anchor": "header6-c3",
           "_isUserblock": true,
           "_cid": "vfxG4Fk3r1",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_name": "header6",
+          "_sourceTheme": "newsm4",
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "background-color": "@bgColor",
+            ".content_block": {
+              "padding": "60px 15px",
+              "padding-right": "20%",
+              "&:hover": {
+                ".mbr-section-title a": {
+                  "color": "@secondaryColor !important"
+                }
+              },
+              "& when (@reverse)": {
+                "padding-left": "20%",
+                "padding-right": "15px"
+              }
+            },
+            ".card_topic, .mbr-section-subtitle": {
+              "margin-bottom": "12px"
+            },
+            ".card_topic .mbr-iconfont": {
+              "font-size": "1rem",
+              "color": "@secondaryColor",
+              "margin-left": "10px",
+              "margin-right": "3px"
+            },
+            ".image": {
+              "position": "relative",
+              "&:before": {
+                "content": "\"\"",
+                "position": "absolute",
+                "width": "60%",
+                "height": "100%",
+                "right": "-1px",
+                "background-image": "linear-gradient(to right, fade(#ffffff, 0), fade(@bgColor, 100))",
+                "z-index": "1",
+                "pointer-events": "none",
+                "& when (@reverse)": {
+                  "left": "0",
+                  "background-image": "linear-gradient(to left, fade(#ffffff, 0), fade(@bgColor, 100))"
+                }
+              },
+              "img": {
+                "width": "100%",
+                "height": "100%",
+                "object-fit": "cover"
+              }
+            },
+            ".mbr-section-btn .btn-secondary-outline": {
+              "padding": "3px 0",
+              "margin-bottom": "0",
+              "border": "none !important",
+              "background-color": "transparent !important",
+              "&:hover, .active, &:focus": {
+                "color": "@primaryColor !important"
+              }
+            },
+            ".category_content": {
+              "opacity": ".8"
+            },
+            "@media (max-width: 991px)": {
+              ".content_block": {
+                "padding": "30px 15px"
+              },
+              ".mbr-figure": {
+                "padding": "0"
+              },
+              ".image": {
+                "&:before": {
+                  "width": "100%",
+                  "height": "60%",
+                  "bottom": "0",
+                  "left": "0",
+                  "background-image": "linear-gradient(to bottom, fade(#ffffff, 0), fade(@bgColor, 99))"
+                }
+              }
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "justify",
+              "color": "#373365"
+            },
+            ".mbr-section-title": {
+              "color": "#373365"
+            },
+            ".category_estimate, .card_topic": {
+              "color": "#373365"
+            }
+          },
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header6\" group=\"Headers\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <header>Size</header>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n        <input type=\"checkbox\" title=\"Revers\" name=\"reverse\" checked>\n        <input type=\"range\" name=\"textWidth\" title=\"Width\" min=\"4\" max=\"9\" value=\"6\" step=\"1\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Topic\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\" checked>\n        <header>Background</header>\n        <input type=\"color\" title=\"Color\" value=\"#ffffff\" name=\"bgColor\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n    \n    <div class>\n        <div class=\"row align-items-center\" mbr-class=\"{'flex-row-reverse' : reverse}\">\n            <div class=\"col-12 col-lg\">\n                <div class=\"mbr-figure\">\n                    <div class=\"image\">\n                        <img src=\"@PROJECT_PATH@/assets/images/design20sans20titre2017-1229x715.webp\" alt=\"Pape et imam musulman en dialogue - Basilique Saint-Pierre\" title>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-{{textWidth}}\">\n                <div class=\"content_block\">\n                    <div class=\"card_topic\" mbr-if=\"showSubtitle\">\n                        <span mbr-text class=\"category_content mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".category_content, .card_topic\">Master class</span>\n                        <span mbr-icon class=\"mbr-iconfont mobi-mbri-clock mobi-mbri\"></span>\n                        <span mbr-text class=\"category_estimate mbr-medium mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".category_estimate, .card_topic\">14 et 28 Janvier, 2027</span>\n                    </div>\n                    <h1 class=\"mbr-section-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">ICM - Chaire de théologie en dialogue avec l'Islam</h1>\n                    <p class=\"mbr-text mbr-fonts-style mt-3\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Le Pôle d’Etudes et de Recherche Islamo-Chrétiennes,&nbsp;sous le patronage de Christian de Chergé, aborde de manière spécifique les questions liées à la connaissance et à la rencontre de l’islam en proposant :<br>→ Une session d’initiation à l’islam et au dialogue<br>→ Des cours de connaissance de l’islam<br>→ Un parcours diplômant sur la rencontre islamo-chrétienne<br>→ Un travail de recherche en islamologie et théologie chrétienne de l’islam<br></p>\n                    <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-primary\" href=\"https://icm.catholique.fr/istr/peric/\" data-app-placeholder=\"Type Text\" target=\"_blank\"><span class=\"mdi-social-school mbr-iconfont mbr-iconfont-btn\"></span>Institut Catholique de la Méditerranée </a></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_isUserblock": true,
+          "_anchor": "header6-cq",
+          "_cid": "vfCF7wHJ7p",
           "_protectedParams": [],
           "_global": false,
           "_once": false,

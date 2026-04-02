@@ -2413,6 +2413,91 @@ a {
 .cid-vfxG4Fk3r1 .card_topic {
   color: #373365;
 }
+.cid-vfCF7wHJ7p {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  background-color: #ffffff;
+}
+.cid-vfCF7wHJ7p .content_block {
+  padding: 60px 15px;
+  padding-right: 20%;
+  padding-left: 20%;
+  padding-right: 15px;
+}
+.cid-vfCF7wHJ7p .content_block:hover .mbr-section-title a {
+  color: #f5b06b !important;
+}
+.cid-vfCF7wHJ7p .card_topic,
+.cid-vfCF7wHJ7p .mbr-section-subtitle {
+  margin-bottom: 12px;
+}
+.cid-vfCF7wHJ7p .card_topic .mbr-iconfont {
+  font-size: 1rem;
+  color: #f5b06b;
+  margin-left: 10px;
+  margin-right: 3px;
+}
+.cid-vfCF7wHJ7p .image {
+  position: relative;
+}
+.cid-vfCF7wHJ7p .image:before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  right: -1px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+  z-index: 1;
+  pointer-events: none;
+  left: 0;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #ffffff);
+}
+.cid-vfCF7wHJ7p .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cid-vfCF7wHJ7p .mbr-section-btn .btn-secondary-outline {
+  padding: 3px 0;
+  margin-bottom: 0;
+  border: none !important;
+  background-color: transparent !important;
+}
+.cid-vfCF7wHJ7p .mbr-section-btn .btn-secondary-outline:hover,
+.cid-vfCF7wHJ7p .mbr-section-btn .btn-secondary-outline .active,
+.cid-vfCF7wHJ7p .mbr-section-btn .btn-secondary-outline:focus {
+  color: #373365 !important;
+}
+.cid-vfCF7wHJ7p .category_content {
+  opacity: .8;
+}
+@media (max-width: 991px) {
+  .cid-vfCF7wHJ7p .content_block {
+    padding: 30px 15px;
+  }
+  .cid-vfCF7wHJ7p .mbr-figure {
+    padding: 0;
+  }
+  .cid-vfCF7wHJ7p .image:before {
+    width: 100%;
+    height: 60%;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.99));
+  }
+}
+.cid-vfCF7wHJ7p .mbr-text,
+.cid-vfCF7wHJ7p .mbr-section-btn {
+  text-align: justify;
+  color: #373365;
+}
+.cid-vfCF7wHJ7p .mbr-section-title {
+  color: #373365;
+}
+.cid-vfCF7wHJ7p .category_estimate,
+.cid-vfCF7wHJ7p .card_topic {
+  color: #373365;
+}
 .cid-veTbfkEDJc .progress-container {
   z-index: 20000;
   position: fixed;
