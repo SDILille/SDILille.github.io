@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link href="assets/fonts/style.css" rel="stylesheet">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=PppKIx"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=PppKIx" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=4nBmgt"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=4nBmgt" type="text/css">
 
   
   <!-- Ajouter dans <head> -->
@@ -88,11 +88,49 @@
 	</nav>
 </section>
 
-<section data-bs-version="5.1" class="header6 cid-vfynT8JcJU" id="header6-cd">
+<section data-bs-version="5.1" class="header6 cid-vfCs9Jx9Gf" id="header6-cm">
 
     
     
-    <div class="">
+    <style>
+        /* CORRECTION: Image collée au bord sans décalage */
+        .header6 .col-12.col-lg:first-child {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        
+        .header6 .mbr-figure {
+            margin: 0 !important;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header6 .image {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header6 .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Container sans padding pour image full-width */
+        .header6 > div[class*="container"] {
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 100%;
+        }
+        
+        .header6 .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    </style>
+    
+    <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg">
                 <div class="mbr-figure">
@@ -101,303 +139,176 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-5">
                 <div class="content_block">
                     
                     <h1 class="mbr-section-title mbr-fonts-style display-1">Ressources</h1>
-                    <p class="mbr-text mbr-fonts-style mt-3 display-7">Bibliographie, IA</p>
+                    <p class="mbr-text mbr-fonts-style mt-3 display-7">Bibliographie, IA magistérielle et catholique, ...</p>
+
+                    <!-- POPUP MAGISTERIUM - COULEUR #373365 -->
+                    <div>
+                        <style>
+                            #mag-backdrop-mbr {
+                                position: fixed;
+                                inset: 0;
+                                background: rgba(55, 51, 101, 0.6);
+                                backdrop-filter: blur(8px);
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: all 0.3s ease;
+                                z-index: 9999;
+                            }
+                            #mag-backdrop-mbr.active {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                            #mag-popup-mbr {
+                                position: fixed;
+                                width: 500px;
+                                height: 500px;
+                                background: #ffffff;
+                                border-radius: 16px;
+                                box-shadow: 0 25px 50px -12px rgba(55, 51, 101, 0.5);
+                                overflow: hidden;
+                                opacity: 0;
+                                visibility: hidden;
+                                transform: scale(0.9) translateY(20px);
+                                transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                                z-index: 10000;
+                                display: flex;
+                                flex-direction: column;
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            }
+                            #mag-popup-mbr.active {
+                                opacity: 1;
+                                visibility: visible;
+                                transform: scale(1) translateY(0);
+                            }
+                            /* COULEUR #373365 */
+                            #mag-header-mbr {
+                                height: 48px;
+                                background: #373365;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 0 16px;
+                                cursor: move;
+                                user-select: none;
+                                color: #fff;
+                                flex-shrink: 0;
+                            }
+                            .mag-title-mbr {
+                                color: white;
+                                font-size: 14px;
+                                font-weight: 600;
+                                margin: 0;
+                            }
+                            .mag-controls-mbr {
+                                display: flex;
+                                gap: 8px;
+                            }
+                            .mag-btn-mbr {
+                                width: 28px;
+                                height: 28px;
+                                border: none;
+                                border-radius: 6px;
+                                background: rgba(255, 255, 255, 0.15);
+                                color: white;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 12px;
+                                transition: all 0.2s ease;
+                            }
+                            .mag-btn-mbr:hover {
+                                background: rgba(255, 255, 255, 0.25);
+                                transform: scale(1.1);
+                            }
+                            .mag-content-mbr {
+                                flex: 1;
+                                position: relative;
+                                overflow: hidden;
+                                background: white;
+                            }
+                            #mag-iframe-mbr {
+                                width: 100%;
+                                height: 100%;
+                                border: none;
+                                background: white;
+                                display: block;
+                            }
+                            /* BOUTON #373365 */
+                            .mag-open-btn-mbr {
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 10px;
+                                padding: 12px 24px;
+                                background: #373365;
+                                color: white;
+                                border: none;
+                                border-radius: 8px;
+                                font-size: 14px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                box-shadow: 0 4px 15px rgba(55, 51, 101, 0.3);
+                                transition: all 0.3s ease;
+                                margin-top: 15px;
+                            }
+                            .mag-open-btn-mbr:hover {
+                                transform: translateY(-2px);
+                                box-shadow: 0 6px 20px rgba(55, 51, 101, 0.4);
+                                background: #2a274d;
+                            }
+                        </style>
+                        
+                        <button type="button" class="mag-open-btn-mbr" onclick="openMagPopupMbr()">
+                            <span>✨</span>
+                            <span>Ouvrir MAGISTERIUM AI</span>
+                        </button>
+                        
+                        <div id="mag-backdrop-mbr"></div>
+                        
+                        <div id="mag-popup-mbr">
+                            <div id="mag-header-mbr">
+                                <div class="mag-title-mbr">Magisterium</div>
+                                <div class="mag-controls-mbr">
+                                    <button type="button" class="mag-btn-mbr" onclick="maximizeMagPopupMbr()" title="Agrandir">⛶</button>
+                                    <button type="button" class="mag-btn-mbr" onclick="closeMagPopupMbr()" title="Fermer">✕</button>
+                                </div>
+                            </div>
+                            <div class="mag-content-mbr">
+                                <iframe id="mag-iframe-mbr" src="about:blank" loading="lazy" class="lazyload"></iframe>
+                            </div>
+                        </div>
+                        
+                        <script>
+                            (function(){
+                                'use strict';
+                                let s={d:false,x:0,y:0,m:false};
+                                const p=document.getElementById('mag-popup-mbr'),
+                                      h=document.getElementById('mag-header-mbr'),
+                                      b=document.getElementById('mag-backdrop-mbr'),
+                                      i=document.getElementById('mag-iframe-mbr');
+                                if(!p||!h)return;
+                                h.addEventListener('mousedown',e=>{if(e.target.closest('.mag-controls-mbr'))return;s.d=true;const r=p.getBoundingClientRect();s.x=e.clientX-r.left;s.y=e.clientY-r.top;p.style.transition='none'});
+                                document.addEventListener('mousemove',e=>{if(!s.d||s.m)return;e.preventDefault();p.style.left=(e.clientX-s.x)+'px';p.style.top=(e.clientY-s.y)+'px'});
+                                document.addEventListener('mouseup',()=>{s.d=false;p.style.transition=''});
+                                window.openMagPopupMbr=()=>{b.classList.add('active');p.classList.add('active');p.style.left='calc(50% - 250px)';p.style.top='calc(50% - 250px)';if(i.src==='about:blank')i.src='https://www.magisterium.com/fr'};
+                                window.closeMagPopupMbr=()=>{b.classList.remove('active');p.classList.remove('active');s.m=false};
+                                window.maximizeMagPopupMbr=()=>{s.m=!s.m;if(s.m){p.style.width='90vw';p.style.height='90vh';p.style.left='5vw';p.style.top='5vh'}else{p.style.width='500px';p.style.height='500px';p.style.left='calc(50% - 250px)';p.style.top='calc(50% - 250px)'}};
+                                document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMagPopupMbr()});
+                                b.addEventListener('click',closeMagPopupMbr)
+                            })();
+                        </script>
+                    </div>
+                    <!-- FIN POPUP -->
+
                     
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-<section data-bs-version="5.1" class="article8 cid-ve73gcJ2uz" id="Magisterium">
-  
-
-  
-  
-  <div class="container" style="padding-top: 1rem; padding-bottom: 1rem;">
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-8">
-        
-        <!-- CARD OMBRÉE -->
-        <div class="card shadow-lg border-0">
-          <div class="card-body">
-
-            <!-- Image centrée -->
-            <div class="text-center mb-4">
-              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Magisterium AI" style="max-width: 300px; height: auto; display: inline-block;" loading="lazy" class="lazyload" data-src="assets/images/magisterium-600x100.webp">
-            </div>
-
-            <!-- Titre -->
-            
-
-            <!-- Texte justifié -->
-            <p class="mbr-fonts-style mb-3 display-7" style="color: #666; line-height: 1.6; text-align: justify;">
-              Magisterium AI est un outil d'intelligence artificielle spécialisé, conçu pour fournir des réponses fiables et fondées sur les enseignements de l'Église catholique. Il puise dans une vaste base de données comprenant plus de 28 000 documents officiels.
-            </p>
-
-            <!-- Bouton -->
-            <div class="text-center mt-3">
-              <button class="mag-btn" onclick="openMagPopup()">
-                <span>🤖</span>
-                <span>Ouvrir Magisterium AI</span>
-              </button>
-            </div>
-
-          </div>
-        </div>
-        <!-- FIN CARD OMBRÉE -->
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Backdrop et Popup -->
-  <div id="mag-backdrop" onclick="closeMagPopup()"></div>
-  <div id="mag-popup">
-    <div class="mag-header" id="mag-header">
-      <div class="mag-header-left">
-        <span>🤖</span>
-        <span>Magisterium AI</span>
-      </div>
-      <div class="mag-controls">
-        <button class="mag-btn-ctrl" onclick="maximizeMagPopup()" id="mag-maximize-btn" title="Agrandir">⛶</button>
-        <button class="mag-btn-ctrl" onclick="closeMagPopup()" title="Fermer">✕</button>
-      </div>
-    </div>
-    <div class="mag-content">
-      <iframe id="mag-iframe" src="about:blank" loading="lazy" class="lazyload"></iframe>
-    </div>
-  </div>
-
-  <style>
-    .mag-btn {
-      padding: 12px 24px;
-      background-color: #edefea;
-      color: #464845;
-      border: 2px solid #464845;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      font-family: 'Mulish', sans-serif;
-      transition: all 0.2s ease-in-out;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 1rem;
-    }
-    
-    .mag-btn:hover {
-      background-color: #464845;
-      color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(70, 72, 69, 0.3);
-    }
-
-    .mag-btn:active {
-      transform: translateY(0);
-    }
-
-    #mag-backdrop {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 9998;
-      backdrop-filter: blur(4px);
-    }
-    
-    #mag-backdrop.active {
-      display: block;
-    }
-    
-    #mag-popup {
-      display: none;
-      position: fixed;
-      width: 500px;
-      height: 500px;
-      background: #464845;
-      border-radius: 8px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-      z-index: 9999;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    
-    #mag-popup.active {
-      display: flex;
-    }
-    
-    .mag-header {
-      padding: 16px 24px;
-      background: #464845;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: move;
-      user-select: none;
-      font-weight: 600;
-      font-family: 'Mulish', sans-serif;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .mag-header-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1rem;
-    }
-    
-    .mag-controls {
-      display: flex;
-      gap: 8px;
-    }
-    
-    .mag-btn-ctrl {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .mag-btn-ctrl:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-      transform: scale(1.05);
-    }
-    
-    .mag-content {
-      flex: 1;
-      overflow: hidden;
-      background: #ffffff;
-    }
-    
-    .mag-content iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      #mag-popup {
-        width: 90vw !important;
-        height: 90vh !important;
-        max-width: 500px;
-        max-height: 500px;
-        left: 5vw !important;
-        top: 5vh !important;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      #mag-popup {
-        width: 95vw !important;
-        height: 95vh !important;
-        border-radius: 0;
-      }
-      
-      .mag-btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-        width: 100%;
-        max-width: 280px;
-      }
-      
-      .mag-header {
-        padding: 12px 16px;
-      }
-    }
-  </style>
-
-  <script>
-    (function() {
-      let magState = { isDragging: false, offsetX: 0, offsetY: 0, maximized: false };
-      const popup = document.getElementById('mag-popup');
-      const header = document.getElementById('mag-header');
-      const maximizeBtn = document.getElementById('mag-maximize-btn');
-      
-      if (!popup || !header) return;
-
-      header.addEventListener('mousedown', (e) => {
-        if (e.target.closest('.mag-controls')) return;
-        magState.isDragging = true;
-        const rect = popup.getBoundingClientRect();
-        magState.offsetX = e.clientX - rect.left;
-        magState.offsetY = e.clientY - rect.top;
-        popup.style.transition = 'none';
-      });
-
-      document.addEventListener('mousemove', (e) => {
-        if (!magState.isDragging || magState.maximized) return;
-        e.preventDefault();
-        popup.style.left = (e.clientX - magState.offsetX) + 'px';
-        popup.style.top = (e.clientY - magState.offsetY) + 'px';
-      });
-
-      document.addEventListener('mouseup', () => { 
-        magState.isDragging = false;
-        if (popup) popup.style.transition = '';
-      });
-
-      window.openMagPopup = function() {
-        const backdrop = document.getElementById('mag-backdrop');
-        const iframe = document.getElementById('mag-iframe');
-        if (backdrop) backdrop.classList.add('active');
-        popup.classList.add('active');
-        popup.style.left = 'calc(50% - 250px)';
-        popup.style.top = 'calc(50% - 250px)';
-        
-        if (iframe && iframe.src === 'about:blank') {
-          iframe.src = 'https://www.magisterium.com/fr';
-        }
-      };
-
-      window.closeMagPopup = function() {
-        const backdrop = document.getElementById('mag-backdrop');
-        if (backdrop) backdrop.classList.remove('active');
-        popup.classList.remove('active');
-        magState.maximized = false;
-      };
-
-      window.maximizeMagPopup = function() {
-        magState.maximized = !magState.maximized;
-        
-        if (magState.maximized) {
-          popup.style.width = '90vw';
-          popup.style.height = '90vh';
-          popup.style.left = '5vw';
-          popup.style.top = '5vh';
-          if (maximizeBtn) maximizeBtn.title = 'Réduire';
-        } else {
-          popup.style.width = '500px';
-          popup.style.height = '500px';
-          popup.style.left = 'calc(50% - 250px)';
-          popup.style.top = 'calc(50% - 250px)';
-          if (maximizeBtn) maximizeBtn.title = 'Agrandir';
-        }
-      };
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') window.closeMagPopup();
-      });
-    })();
-  </script>
 </section>
 
 <section data-bs-version="5.1" class="features4 start cid-vfC2vBR7mb" id="features04-cf">
@@ -457,264 +368,124 @@
 	</div>
 </section>
 
-<section data-bs-version="5.1" class="list06 cid-vcreqW0oDQ" id="list06-4m">
-    
-    
-    
-    
-    <div class="container" style="padding-top: 0rem; padding-bottom: 3rem;">
-        
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-9">
-                <div class="item features-without-image col-12 active">
-                    <div class="item-wrapper biblio-card" style="background-color: rgb(255, 255, 255);">
-                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5" style="color: #373365;">
-                            <strong>Bibliographie</strong>
-                        </h5>
-                        <h6 class="mbr-card-subtitle mbr-fonts-style mt-0 mb-4 display-7" style="color: #666;">
-                            Octobre 2025.
-                        </h6>
-                        <h6 class="mbr-card-subtitle mbr-fonts-style mt-0 mb-3 display-7" style="color: #666; font-style: italic;">
-                            <em>Etablie par fr. Jean-François Bour.</em>
-                        </h6>
-                        <div class="counter-container mbr-text mbr-fonts-style display-7" style="color: #232323; line-height: 1.8;">
-                            
-                            <div class="biblio-category"><strong><u>Approches historiques et géographiques</u></strong></div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Arkoun M.</strong> (dir.), <em>Histoire de l'islam et des musulmans en France du Moyen Âge à nos jours</em>, Paris, Albin Michel, 2006.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Amir-Moezzi M.-A.</strong> et <strong>Lory P.</strong>, <em>Petite histoire de l'islam</em>, Librio (Flammarion), 2007, 94 p. (et J'ai Lu).</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Godard B.</strong>, <em>La question musulmane en France, un état des lieux sans concessions</em>, Fayard, 2015, 350 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Francis Messner</strong> (dir.), <em>Le statut des ministres du culte musulman en France</em>, P. Univ. Strasbourg, 2021, 284 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Dupont A.L.</strong>, <em>Atlas de l'islam</em>, éd. Autrement, 2022, 96 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Tolan J.</strong>, <em>Nouvelle histoire de l'islam, VIIe-XXIe s.</em>, Tallandier, 2022.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Jamel El-Hamri</strong>, <em>Les musulmans dans l'histoire de France, une place singulière</em>, AFPI, 2023, 128 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Franck Frégosi</strong>, <em>Gouverner l'islam en France</em>, Seuil, 2025, 381 p.</div>
-                            
-                            <div class="biblio-category"><strong><u>Le Coran</u></strong></div>
-                            <div class="biblio-item"><span class="material-icons"></span><em>Coran</em>, Traduction de <strong>Denise Masson</strong>, Paris, Gallimard (Reconnue par Al-Azhar, Le Caire).</div>
-                            <div class="biblio-item"><span class="material-icons"></span><em>Coran</em>, Traduction de <strong>Mohammed Hamidullah</strong> (bilingue avec introduction et notes).</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Amir-Moezzi M.-A.</strong> (dir.), <em>Dictionnaire du Coran</em> – coll. Bouquins, Robert Laffont, Paris, 2007, 981 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Jomier J.</strong>, <em>Les grands thèmes du Coran</em>, Paris, Le Cerf, 1999.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Monneret J.-L.</strong>, <em>Les grands thèmes du Coran, classement thématique (versets)</em>, Dervy, 2003, 725 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Reeber M.</strong>, <em>Le Coran (guide de lecture)</em>, Les essentiels Milan, Toulouse, 2002, 63 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Benzine R.</strong>, <em>Le Coran expliqué aux jeunes</em>, Seuil, Paris, 2013, 200 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Gobillot G.</strong> et <strong>Cuypers M.</strong>, <em>Idées reçues sur le Coran, Entre tradition islamique et lecture moderne</em>, Le Cavalier Bleu, Paris, 2021, 145 p.</div>
-                            
-                            <div class="biblio-category"><strong><u>Doctrines et traditions</u></strong></div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Gardet L.</strong>, <em>L'Islam, religion et communauté</em>, Desclée de Brouwer, 1982.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Jomier J.</strong>, <em>Pour connaître l'islam</em>, Cerf, Paris, 1988, 200 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Alili R.</strong>, <em>Qu'est-ce que l'islam ?</em>, La Découverte, Paris, 1996.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Platti E.</strong>, <em>Islam... Étrange ?</em>, Cerf, Paris, 2000, 338 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Brunin J.-L.</strong>, <em>L'Islam... tout simplement</em>, L'Atelier, Paris, 2003, 191 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Borrmans M.</strong>, <em>Pour comprendre les musulmans</em>, Mediaspaul, 2010, 63 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Candiard A.</strong>, <em>Comprendre l'islam ou plutôt : pourquoi on n'y comprend rien</em>, Champs actuel, 2016.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Claverie P.</strong>, <em>Petite introduction à l'islam</em>, Cerf, Paris, 2010, 110 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Delcambre A.-M.</strong>, <em>L'islam</em>, La Découverte, Paris, 2004, 125 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Reeber M.</strong>, <em>L'islam</em>, Les essentiels Milan, Toulouse, 2005, 63 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Stehly Ralph</strong>, <em>Introduction à l'islam, fondements et croyances</em>, éd. Erick Bonnier, 2019.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Abdennour Bidar</strong>, <em>Les cinq piliers de l'islam et leur sens initiatique</em>, Albin Michel, 2023, 225 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Lepesqueur Y.</strong>, <em>L'islam et l'Ordre du monde</em>, Tallandier, 2025.</div>
-                            
-                            <div class="biblio-category"><strong><u>Études spécialisées</u></strong></div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Amir Moezzi M.A.</strong>, <em>Le guide divin dans le shî`isme originel</em>, Verdier, 2007, 348 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Chabbi J.</strong>, <em>Les Trois Piliers de l'islam, Lecture anthropologique du Coran</em>, Seuil, 2016.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Chabbi J.</strong>, <em>Le Coran décrypté : Figures bibliques en Arabie</em>, Poche, Paris, 2014, 415 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Dye Dominique</strong> et <strong>Amir-Moezzi Mohammed-Ali</strong> (dir.), <em>Le Coran des historiens</em>, Cerf, Paris, 2019 (3 vol.).</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Djait H.</strong>, <em>La grande discorde, Religion et politique dans l'islam des origines</em>, Gallimard, Paris, 1989.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Coulson N.J.</strong>, <em>Histoire du droit islamique</em>, PUF, Paris, 1995, 234 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Jolivet J.</strong>, <em>La théologie et les Arabes</em>, Cerf, Paris, 2002, 120 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Cruz Hernandez M.</strong>, <em>Histoire de la pensée en terre d'islam</em>, éd. Desjonquères, 2005, 951 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Boubakeur Si Hamza</strong>, <em>Traité moderne de théologie islamique</em>, Paris, Maisonneuve et Larose, 2003.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Arminjon Constance</strong>, <em>Brève histoire de la pensée politique en Islam contemporain</em>, Labor &amp; Fides, 2017.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Arminjon C.</strong>, <em>Vers une nouvelle théologie en Islam</em>, CNRS éd., 2022, 379 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Hanne Olivier</strong>, <em>Histoire du Djihad, des origines de l'islam à Daech</em>, Tallandier, 2024, 505 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Pisani E.</strong> (dir.), <em>Théologies musulmanes du pluralisme religieux</em>, Cerf Patrimoines, 2024.</div>
-                            
-                            <div class="biblio-category"><strong><u>Débats</u></strong></div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Delorme Ch.</strong>, <em>L'islam que j'aime, l'islam qui m'inquiète</em>, Paris, Bayard, 2012, 244 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Oubrou T.</strong>, <em>Un imam en colère</em>, Paris, Bayard, 2012, 180 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Abdelkrim F.</strong>, <em>Pourquoi j'ai cessé d'être islamiste : Itinéraire au cœur de l'islam en France</em>, éd. Les points sur les I, 2015, 264 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Dounia Bouzar</strong>, <em>Désamorcer l'islam radical : Ces dérives sectaires qui défigurent l'islam</em>, L'Atelier, 2014.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Bencheikh Ghaleb</strong>, <em>Petit manuel pour un islam à la mesure des hommes</em>, JC Lattès, 2018.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Ben Achour Yadh</strong> et <strong>Dermange François</strong>, <em>Quel islam pour l'Europe</em>, Labor et Fides, 2017.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Adrien Candiard</strong>, <em>Du fanatisme. Quand la religion est malade</em>, Les Éditions du Cerf, 2020, 96 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Platti Emilio</strong>, <em>Que penser de... ? L'islamisme</em>, Fidélité, Paris-Bruxelles, 2016, 117 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Rémi Brague</strong>, <em>Sur l'Islam</em>, Gallimard, 2023, 385 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Hugo Micheron</strong>, <em>La colère et l'oubli – les démocraties face au jihadisme européen</em>, Folio, nov. 2024.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Omero Marongiu</strong> et alii, <em>Qu'est-ce qu'un islam libéral ?</em>, éd. Atlandes, 2023, 174 p.</div>
-                            
-                            <div class="biblio-category"><strong><u>Témoignages</u></strong></div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Karima Berger</strong>, <em>Éclats d'Islam : Chroniques d'un itinéraire spirituel</em>, Albin Michel, mars 2009, 263 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Reille Christian</strong>, <em>Un jésuite en terre d'Islam</em>, Lessius, 2017.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Christine Ray</strong>, <em>Christian de Chergé, une biographie spirituelle</em>, Albin Michel, 1998.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Chahina-Marie Baret</strong>, <em>Musulmane disciple du Christ</em>, Fidélité, 2022, 112 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>R. Hamel</strong> et <strong>N. Kermiche</strong>, <em>Sœurs de douleur</em>, éd. XO, 2025, 239 p.</div>
-                            
-                            <div class="biblio-category"><strong><u>Autour du dialogue islamo-chrétien</u></strong></div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Arnaldez Roger</strong>, <em>Jésus, fils de Marie prophète de l'islam</em>, Desclée, 1980.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Jean-Jacques Pérennès</strong>, <em>Passion Kaboul, le père Serge de Beaureceuil</em>, 2014, 355 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Michel Dubost</strong>, <em>Catholiques - Musulmans, une fraternité critique</em>, Mediaspaul, mai 2014, 246 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Adrien Candiard</strong>, <em>En finir avec la tolérance ? Différences religieuses et rêve andalou</em>, PUF, 2014, 112 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Borrmans Maurice</strong>, <em>Chrétiens et musulmans : ressemblances et diversité</em>, Mediaspaul, 2015, 144 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Conférence des Évêques de France</strong>, <em>L'Église catholique et les relations avec les musulmans - Compendium</em>, Bayard – Cerf – Mame, 2021.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Gira Dennis</strong>, <em>Le dialogue à la portée de tous, ou presque</em>, Bayard, 2012.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Druel Jean</strong>, <em>Je crois en Dieu, moi non plus ! Principes du dialogue interreligieux</em>, Cerf, 2017.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Salenson Christian</strong>, <em>Cette Église révélée par les martyrs d'Algérie</em>, Nouvelle Cité, 2020.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Younes M.</strong>, <em>Les approches chrétiennes de l'islam - Tensions, déplacements, enjeux</em>, Cerf, 2020, 364 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Henri de La Hougue</strong>, <em>L'Église et la diversité des religions</em>, Salvator, 2021.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Gira D.</strong>, <em>Le dialogue interreligieux, une perspective chrétienne</em>, éd. Chemins de dialogue, 2022.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Guggenheim A.</strong> (dir.), <em>Une pratique chrétienne de la rencontre avec l'islam et les musulmans</em>, Parole et Silence, 2022.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>J.-Marc Aveline</strong>, <em>Dieu a tant aimé le monde – Petite théologie de la mission</em>, Cerf, 2023, 157 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>C. Hamza</strong>, <strong>X. Manzano</strong>, <strong>C. Roucou</strong>, <em>Dire sa foi</em>, Chemins de dialogue, 2024, 98 p.</div>
-                            
-                            <div class="biblio-category"><strong><u>Documents épiscopaux</u></strong></div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Épiscopat (2024-10)</strong>, « <em>Les 50 ans du SNRM, L'engagement de l'Église de France pour le dialogue avec les musulmans</em> », Conf. des Évêques de France, sept. 2024.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Épiscopat</strong>, « <em>60 ans de Nostra Aetate</em> », février 2025.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>En Dialogue</strong>, « <em>Discours et conférences de l'anniversaire du SNRM, 1973-2023</em> », CEF, juin 2025, 70 p.</div>
-                            <div class="biblio-item"><span class="material-icons"></span><strong>Salenson Christian</strong>, <em>Au cœur des autres – petite théologie du dialogue</em>, Nouvelle Cité, 2025, 259 p.</div>
-                        </div>
-                    </div>
-                </div>
+<section data-bs-version="5.1" class="article07 cid-vfCvFhuc5e" id="article07-co">
+  
+
+  
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card col-md-12 col-lg-10">
+        <div class="card-wrapper">
+          <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
+            <strong>Bibliographie</strong>
+          </h3>
+          <div class="row card-box align-left">
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                <h4 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5"><strong>Etablie par fr. Jean-François Bour.</strong></h4>
+                <p class="mbr-text mbr-fonts-style display-7">
+                  <strong>Approches historiques et géographiques</strong><br>
+                  • <strong>Arkoun M. (dir.)</strong>, <em>Histoire de l'islam et des musulmans en France du Moyen Âge à nos jours</em>, Paris, Albin Michel, 2006.<br>
+                  • <strong>Amir-Moezzi M.-A. et Lory P.</strong>, <em>Petite histoire de l'islam</em>, Librio (Flammarion), 2007, 94 p. (et J'ai Lu).<br>
+                  • <strong>Godard B.</strong>, <em>La question musulmane en France, un état des lieux sans concessions</em>, Fayard, 2015, 350 p.<br>
+                  • <strong>Francis Messner (dir.)</strong>, <em>Le statut des ministres du culte musulman en France</em>, P. Univ. Strasbourg, 2021, 284 p.<br>
+                  • <strong>Dupont A.L.</strong>, <em>Atlas de l'islam</em>, éd. Autrement, 2022, 96 p.<br>
+                  • <strong>Tolan J.</strong>, <em>Nouvelle histoire de l'islam, VIIe-XXIe s.</em>, Tallandier, 2022.<br>
+                  • <strong>Jamel El-Hamri</strong>, <em>Les musulmans dans l'histoire de France, une place singulière</em>, AFPI, 2023, 128 p.<br>
+                  • <strong>Franck Frégosi</strong>, <em>Gouverner l'islam en France</em>, Seuil, 2025, 381 p.<br>
+                  <br>
+                  <strong>Le Coran</strong><br>
+                  • <strong>Denise Masson (trad.)</strong>, <em>Le Coran</em>, Paris, Gallimard (Reconnue par Al-Azhar, Le Caire).<br>
+                  • <strong>Mohammed Hamidullah (trad.)</strong>, <em>Le Coran</em> (bilingue avec introduction et notes).<br>
+                  • <strong>Amir-Moezzi M.-A. (dir.)</strong>, <em>Dictionnaire du Coran</em> – coll. Bouquins, Robert Laffont, Paris, 2007, 981 p.<br>
+                  • <strong>Jomier J.</strong>, <em>Les grands thèmes du Coran</em>, Paris, Le Cerf, 1999.<br>
+                  • <strong>Monneret J.-L.</strong>, <em>Les grands thèmes du Coran</em>, classement thématique (versets), Dervy, 2003, 725 p.<br>
+                  • <strong>Reeber M.</strong>, <em>Le Coran (guide de lecture)</em>, Les essentiels Milan, Toulouse, 2002, 63 p.<br>
+                  • <strong>Benzine R.</strong>, <em>Le Coran expliqué aux jeunes</em>, Seuil, Paris, 2013, 200 p.<br>
+                  • <strong>Gobillot G. et Cuypers M.</strong>, <em>Idées reçues sur le Coran, Entre tradition islamique et lecture moderne</em>, Le Cavalier Bleu, Paris, 2021, 145 p.<br>
+                  <br>
+                  <strong>Doctrines et traditions</strong><br>
+                  • <strong>Gardet L.</strong>, <em>L'Islam, religion et communauté</em>, Desclée de Brouwer, 1982.<br>
+                  • <strong>Jomier J.</strong>, <em>Pour connaître l'islam</em>, Cerf, Paris, 1988, 200 p.<br>
+                  • <strong>Alili R.</strong>, <em>Qu'est-ce que l'islam ?</em>, La Découverte, Paris, 1996.<br>
+                  • <strong>Platti E.</strong>, <em>Islam... Étrange ?</em>, Cerf, Paris, 2000, 338 p.<br>
+                  • <strong>Brunin J.-L.</strong>, <em>L'Islam... tout simplement</em>, L'Atelier, Paris, 2003, 191 p.<br>
+                  • <strong>Borrmans M.</strong>, <em>Pour comprendre les musulmans</em>, Mediaspaul, 2010, 63 p.<br>
+                  • <strong>Candiard A.</strong>, <em>Comprendre l'islam ou plutôt : pourquoi on n'y comprend rien</em>, Champs actuel, 2016.<br>
+                  • <strong>Claverie P.</strong>, <em>Petite introduction à l'islam</em>, Cerf, Paris, 2010, 110 p.<br>
+                  • <strong>Delcambre A.-M.</strong>, <em>L'islam</em>, La Découverte, Paris, 2004, 125 p.<br>
+                  • <strong>Reeber M.</strong>, <em>L'islam</em>, Les essentiels Milan, Toulouse, 2005, 63 p.<br>
+                  • <strong>Stehly Ralph</strong>, <em>Introduction à l'islam, fondements et croyances</em>, éd. Erick Bonnier, 2019.<br>
+                  • <strong>Abdennour Bidar</strong>, <em>Les cinq piliers de l'islam et leur sens initiatique</em>, Albin Michel, 2023, 225 p.<br>
+                  • <strong>Lepesqueur Y.</strong>, <em>L'islam et l'Ordre du monde</em>, Tallandier, 2025.<br>
+                  <br>
+                  <strong>Études spécialisées</strong><br>
+                  • <strong>Amir Moezzi M.A.</strong>, <em>Le guide divin dans le shî`isme originel</em>, Verdier, 2007, 348 p.<br>
+                  • <strong>Chabbi J.</strong>, <em>Les Trois Piliers de l'islam, Lecture anthropologique du Coran</em>, Seuil, 2016.<br>
+                  • <strong>Chabbi J.</strong>, <em>Le Coran décrypté : Figures bibliques en Arabie</em>, Poche, Paris, 2014, 415 p.<br>
+                  • <strong>Dye Dominique et Amir-Moezzi Mohammed-Ali (dir.)</strong>, <em>Le Coran des historiens</em>, Cerf, Paris, 2019 (3 vol.).<br>
+                  • <strong>Djait H.</strong>, <em>La grande discorde, Religion et politique dans l'islam des origines</em>, Gallimard, Paris, 1989.<br>
+                  • <strong>Coulson N.J.</strong>, <em>Histoire du droit islamique</em>, PUF, Paris, 1995, 234 p.<br>
+                  • <strong>Jolivet J.</strong>, <em>La théologie et les Arabes</em>, Cerf, Paris, 2002, 120 p.<br>
+                  • <strong>Cruz Hernandez M.</strong>, <em>Histoire de la pensée en terre d'islam</em>, éd. Desjonquères, 2005, 951 p.<br>
+                  • <strong>Boubakeur Si Hamza</strong>, <em>Traité moderne de théologie islamique</em>, Paris, Maisonneuve et Larose, 2003.<br>
+                  • <strong>Arminjon Constance</strong>, <em>Brève histoire de la pensée politique en Islam contemporain</em>, Labor &amp; Fides, 2017.<br>
+                  • <strong>Arminjon C.</strong>, <em>Vers une nouvelle théologie en Islam</em>, CNRS éd., 2022, 379 p.<br>
+                  • <strong>Hanne Olivier</strong>, <em>Histoire du Djihad, des origines de l'islam à Daech</em>, Tallandier, 2024, 505 p.<br>
+                  • <strong>Pisani E. (dir.)</strong>, <em>Théologies musulmanes du pluralisme religieux</em>, Cerf Patrimoines, 2024.<br>
+                  <br>
+                  <strong>Débats</strong><br>
+                  • <strong>Delorme Ch.</strong>, <em>L'islam que j'aime, l'islam qui m'inquiète</em>, Paris, Bayard, 2012, 244 p.<br>
+                  • <strong>Oubrou T.</strong>, <em>Un imam en colère</em>, Paris, Bayard, 2012, 180 p.<br>
+                  • <strong>Abdelkrim F.</strong>, <em>Pourquoi j'ai cessé d'être islamiste : Itinéraire au cœur de l'islam en France</em>, éd. Les points sur les I, 2015, 264 p.<br>
+                  • <strong>Dounia Bouzar</strong>, <em>Désamorcer l'islam radical : Ces dérives sectaires qui défigurent l'islam</em>, L'Atelier, 2014.<br>
+                  • <strong>Bencheikh Ghaleb</strong>, <em>Petit manuel pour un islam à la mesure des hommes</em>, JC Lattès, 2018.<br>
+                  • <strong>Ben Achour Yadh et Dermange François</strong>, <em>Quel islam pour l'Europe</em>, Labor et Fides, 2017.<br>
+                  • <strong>Adrien Candiard</strong>, <em>Du fanatisme. Quand la religion est malade</em>, Les Éditions du Cerf, 2020, 96 p.<br>
+                  • <strong>Platti Emilio</strong>, <em>Que penser de... ? L'islamisme</em>, Fidélité, Paris-Bruxelles, 2016, 117 p.<br>
+                  • <strong>Rémi Brague</strong>, <em>Sur l'Islam</em>, Gallimard, 2023, 385 p.<br>
+                  • <strong>Hugo Micheron</strong>, <em>La colère et l'oubli – les démocraties face au jihadisme européen</em>, Folio, nov. 2024.<br>
+                  • <strong>Omero Marongiu et alii</strong>, <em>Qu'est-ce qu'un islam libéral ?</em>, éd. Atlandes, 2023, 174 p.<br>
+                  <br>
+                  <strong>Témoignages</strong><br>
+                  • <strong>Karima Berger</strong>, <em>Éclats d'Islam : Chroniques d'un itinéraire spirituel</em>, Albin Michel, mars 2009, 263 p.<br>
+                  • <strong>Reille Christian</strong>, <em>Un jésuite en terre d'Islam</em>, Lessius, 2017.<br>
+                  • <strong>Christine Ray</strong>, <em>Christian de Chergé, une biographie spirituelle</em>, Albin Michel, 1998.<br>
+                  • <strong>Chahina-Marie Baret</strong>, <em>Musulmane disciple du Christ</em>, Fidélité, 2022, 112 p.<br>
+                  • <strong>R. Hamel et N. Kermiche</strong>, <em>Sœurs de douleur</em>, éd. XO, 2025, 239 p.<br>
+                  <br>
+                  <strong>Autour du dialogue islamo-chrétien</strong><br>
+                  • <strong>Arnaldez Roger</strong>, <em>Jésus, fils de Marie prophète de l'islam</em>, Desclée, 1980.<br>
+                  • <strong>Jean-Jacques Pérennès</strong>, <em>Passion Kaboul, le père Serge de Beaureceuil</em>, 2014, 355 p.<br>
+                  • <strong>Michel Dubost</strong>, <em>Catholiques - Musulmans, une fraternité critique</em>, Mediaspaul, mai 2014, 246 p.<br>
+                  • <strong>Adrien Candiard</strong>, <em>En finir avec la tolérance ? Différences religieuses et rêve andalou</em>, PUF, 2014, 112 p.<br>
+                  • <strong>Borrmans Maurice</strong>, <em>Chrétiens et musulmans : ressemblances et diversité</em>, Mediaspaul, 2015, 144 p.<br>
+                  • <strong>Conférence des Évêques de France</strong>, <em>L'Église catholique et les relations avec les musulmans - Compendium</em>, Bayard – Cerf – Mame, 2021.<br>
+                  • <strong>Gira Dennis</strong>, <em>Le dialogue à la portée de tous, ou presque</em>, Bayard, 2012.<br>
+                  • <strong>Druel Jean</strong>, <em>Je crois en Dieu, moi non plus ! Principes du dialogue interreligieux</em>, Cerf, 2017.<br>
+                  • <strong>Salenson Christian</strong>, <em>Cette Église révélée par les martyrs d'Algérie</em>, Nouvelle Cité, 2020.<br>
+                  • <strong>Younes M.</strong>, <em>Les approches chrétiennes de l'islam - Tensions, déplacements, enjeux</em>, Cerf, 2020, 364 p.<br>
+                  • <strong>Henri de La Hougue</strong>, <em>L'Église et la diversité des religions</em>, Salvator, 2021.<br>
+                  • <strong>Gira D.</strong>, <em>Le dialogue interreligieux, une perspective chrétienne</em>, éd. Chemins de dialogue, 2022.<br>
+                  • <strong>Guggenheim A. (dir.)</strong>, <em>Une pratique chrétienne de la rencontre avec l'islam et les musulmans</em>, Parole et Silence, 2022.<br>
+                  • <strong>J.-Marc Aveline</strong>, <em>Dieu a tant aimé le monde – Petite théologie de la mission</em>, Cerf, 2023, 157 p.<br>
+                  • <strong>C. Hamza, X. Manzano, C. Roucou</strong>, <em>Dire sa foi</em>, Chemins de dialogue, 2024, 98 p.<br>
+                  <br>
+                  <strong>Documents épiscopaux</strong><br>
+                  • <strong>Épiscopat (2024-10)</strong>, <em>« Les 50 ans du SNRM, L'engagement de l'Église de France pour le dialogue avec les musulmans »</em>, Conf. des Évêques de France, sept. 2024.<br>
+                  • <strong>Épiscopat</strong>, <em>« 60 ans de Nostra Aetate »</em>, février 2025.<br>
+                  • <strong>En Dialogue</strong>, <em>« Discours et conférences de l'anniversaire du SNRM, 1973-2023 »</em>, CEF, juin 2025, 70 p.<br>
+                  • <strong>Salenson Christian</strong>, <em>Au cœur des autres – petite théologie du dialogue</em>, Nouvelle Cité, 2025, 259 p.
+                </p>
+              </div>
             </div>
+          </div>
+          
         </div>
+      </div>
     </div>
-
-    <style>
-        /* Material Icons */
-        .material-icons {
-            font-size: 20px;
-            vertical-align: middle;
-            margin-right: 8px;
-            color: #373365;
-        }
-        
-        /* Card Bibliographie */
-        .biblio-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 2px 20px rgba(55, 51, 101, 0.08);
-        }
-        
-        /* Catégories */
-        .biblio-category {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #373365;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-        
-        .biblio-category:first-child {
-            margin-top: 0;
-        }
-        
-        /* Items */
-        .biblio-item {
-            margin-bottom: 0.75rem;
-            padding-left: 0.5rem;
-            line-height: 1.8;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .biblio-card {
-                padding: 1.5rem;
-            }
-            
-            .biblio-category {
-                font-size: 0.95rem;
-            }
-            
-            .biblio-item {
-                font-size: 0.85rem;
-                padding-left: 0;
-            }
-        }
-    </style>
-</section>
-
-<section data-bs-version="5.1" class="header10 cid-vcTOnGZwqg" id="header10-52">
-
-    
-
-    
-    
-
-    <div class="align-center container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-9">
-                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>"Dire sa foi"</strong></h1>
-                <p class="mbr-text mbr-fonts-style display-7">Auteurs : Colette Hamza, Christophe Roucou, Xavier Manzano
-<br>© Publications Chemins de Dialogue, 2024</p>
-                <div class="mbr-section-btn mt-3"><a class="btn btn-secondary display-4" href="https://icm.catholique.fr/cheminsdedialogue/d/" target="_blank">Commander</a></div>
-                <div class="image-wrap mt-4">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Mobirise Website Builder" title="" loading="lazy" class="lazyload" data-src="assets/images/1545852-1-300x499.webp">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="features20 cid-vcTcMpOHVk" id="features20-4y">
-
-    
-
-    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-7">
-                <div class="card-wrapper pb-4">
-                    <div class="card-box align-center">
-                        <h4 class="card-title mbr-fonts-style mb-4 display-2"><strong>À qui s'adresse ce livre ?</strong></h4>
-                        <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                            Pour accompagner une démarche de dialogue et de formation.<br><br>• Jeunes chrétiens qui rencontrent des amis musulmans et souhaitent approfondir leur foi
-<br>• Animateurs de jeunesse et accompagnateurs pastoraux
-<br>• Catéchistes et enseignants en établissements catholiques
-<br>• Parents souhaitant accompagner leurs enfants dans ces questions<br><br>Quand des jeunes chrétiens rencontrent d'autres croyants. Un livre pour accompagner les jeunes chrétiens dans le dialogue avec leurs amis musulmans, répondre à leurs questions et approfondir leur propre foi dans un dialogue authentique.<br></p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="item mbr-flex">
-                    <div class="icon-box">
-                        <span class="step-number mbr-fonts-style display-5">1</span>
-                    </div>
-                    <div class="text-box">
-                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-4"><strong>Ne pas parler à la place de l'autre</strong></h4>
-                        <h5 class="icon-text mbr-black mbr-fonts-style display-7"><div>Écoute sincère et attentive de l'interlocuteur, dans le respect de sa foi et de son identité.</div></h5>
-                    </div>
-                </div>
-                <div class="item mbr-flex">
-                    <div class="icon-box">
-                        <span class="step-number mbr-fonts-style display-5">2</span>
-                    </div>
-                    <div class="text-box">
-                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-4"><strong>Reconnaître notre humanité commune</strong></h4>
-                        <h5 class="icon-text mbr-black mbr-fonts-style display-7"><div>Ce qui nous rapproche est plus grand que ce qui nous sépare : mêmes désirs, mêmes interrogations, même dignité.</div></h5>
-                    </div>
-                </div>
-                <div class="item mbr-flex last">
-                    <div class="icon-box">
-                        <span class="step-number mbr-fonts-style display-5">3</span>
-                    </div>
-                    <div class="text-box">
-                        <h4 class="icon-title card-title mbr-black mbr-fonts-style display-4"><strong>Le dialogue comme charité</strong></h4>
-                        <h5 class="icon-text mbr-black mbr-fonts-style display-7">Témoigner de sa foi sans chercher à convaincre, dans la gratuité et l'amitié authentique.</h5>
-                    </div>
-                </div>
-                
-                
-                
-                
-                
-                
-                
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
 <section data-bs-version="5.1" class="footer1 cid-veTe4NhP0l" once="footers" id="footer1-av">
