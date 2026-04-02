@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link href="assets/fonts/style.css" rel="stylesheet">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=ivbqer"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=ivbqer" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=ELeiQR"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=ELeiQR" type="text/css">
 
   
   <!-- Ajouter dans <head> -->
@@ -76,7 +76,7 @@
 				<ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
 						<a class="nav-link link text-primary display-4" href="index.html">Découvrir</a>
 					</li>
-					<li class="nav-item dropdown open">
+					<li class="nav-item dropdown">
 						<a class="nav-link link text-primary dropdown-toggle show display-4" href="bibliographie.html#Magisterium" aria-expanded="true" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside">Connaître</a><div class="dropdown-menu show" aria-labelledby="dropdown-524" data-bs-popper="none"><a class="text-primary dropdown-item display-4" href="formation.html">Formation</a><a class="text-primary dropdown-item display-4" href="bibliographie.html">Documentation</a><a class="text-primary show dropdown-item display-4" href="calendrier.html">Calendrier des fêtes religieuses</a></div>
 					</li>
 					<li class="nav-item dropdown">
@@ -97,7 +97,7 @@
             <div class="col-12 col-lg">
                 <div class="mbr-figure">
                     <div class="image">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Pape et imam musulman en dialogue - Basilique Saint-Pierre" title="" loading="lazy" class="lazyload" data-src="assets/images/cal-1229x670.webp">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Pape et imam musulman en dialogue - Basilique Saint-Pierre" title="" loading="lazy" class="lazyload" data-src="assets/images/cal-1-1229x670.webp">
                     </div>
                 </div>
             </div>
@@ -124,10 +124,13 @@
       <div class="card col-md-12 col-lg-10 shadow rounded bg-white" style="background-color: rgb(255, 255, 255);">
         <div class="card-wrapper">
           <h3 class="card-title mbr-fonts-style mt-3 mb-4 display-2">
-            <strong id="titleIcons"></strong> Calendrier du dialogue
+            <strong id="titleIcons"></strong> Calendrier du dialogue <span id="currentYearDisplay"></span>
           </h3>
           
-          <div class="year-selector" id="buttons" style="text-align: center; margin: 20px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;"></div>
+          <div class="year-nav" id="yearNav" style="text-align: center; margin: 20px 0;">
+            <button id="prevYearBtn" class="year-btn" title="Année précédente">←</button>
+            <button id="nextYearBtn" class="year-btn" title="Année suivante">→</button>
+          </div>
           
           <div id="content" style="margin-top: 20px;"></div>
           
@@ -155,34 +158,39 @@
       margin-right: 6px;
       vertical-align: middle;
     }
-
-    .article07 .year-selector button {
-      padding: 10px 15px;
+    
+    .article07 .year-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .article07 .year-btn {
+      padding: 10px 20px;
       border: 1px solid #373365;
       border-radius: 4px;
       cursor: pointer;
       background: #ffffff;
       color: #373365;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 600;
       font-family: 'Mulish', sans-serif;
       transition: all 0.2s ease-in-out;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      word-break: break-word;
+      min-width: 50px;
     }
     
-    .article07 .year-selector button:hover {
+    .article07 .year-btn:hover {
       background: #373365;
       color: #ffffff;
       box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
     }
     
-    .article07 .year-selector button.active {
-      background: #373365;
-      color: #ffffff;
-      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;
+    .article07 .year-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      background: #ffffff;
+      color: #373365;
     }
     
     .article07 .calendar-grid {
@@ -244,6 +252,11 @@
       font-weight: 600;
       font-family: 'Mulish', sans-serif;
     }
+    
+    .article07 .year-display {
+      color: #373365;
+      font-weight: 700;
+    }
   </style>
 
   <script>
@@ -272,34 +285,83 @@
       2037:{c:[["1er janvier","Solennité Marie Mère de Dieu"],["6 janvier","Épiphanie"],["18 fév","Mercredi des Cendres"],["25 mars","Annonciation"],["29 mars","Rameaux"],["2 avril","Jeudi Saint"],["3 avril","Vendredi Saint"],["5 avril","Pâques"],["14 mai","Ascension"],["24 mai","Pentecôte"],["4 juin","Fête-Dieu"],["15 août","Assomption"],["1er nov","Toussaint"],["8 déc","Immaculée Conception"],["25 déc","Noël"]],i:[["20 oct 2036","Début Ramadan"],["14 nov 2036","Laylat al-Qadr"],["18 nov 2036","Aïd al-Fitr"],["27 janv","Aïd al-Adha"],["19 mars","Nouvel An Hijri"],["27 avril","Mawlid"]]}
     };
 
-    function show(y) {
-      document.querySelectorAll('.year-selector button').forEach(b => b.classList.remove('active'));
-      const clickedBtn = document.querySelector(`.year-selector button[data-year="${y}"]`);
-      if (clickedBtn) clickedBtn.classList.add('active');
-      const d = cal[y];
-      document.getElementById('content').innerHTML = '<div class="calendar-grid"><div class="calendar-card catholic"><h2>' + getCrossIcon() + 'Catholicisme</h2>' + d.c.map(x => '<div class="calendar-item"><span>' + x[1] + '</span><span class="calendar-date">' + x[0] + '</span></div>').join('') + '</div><div class="calendar-card islam"><h2>' + getCrescentIcon() + 'Islam</h2>' + d.i.map(x => '<div class="calendar-item"><span>' + x[1] + '</span><span class="calendar-date">' + x[0] + '</span></div>').join('') + '</div></div>';
+    let currentDisplayYear = 2026;
+    const minYear = 2026;
+    const maxYear = 2037;
+
+    function showCalendar(year) {
+      const d = cal[year];
+      if (!d) return;
+      
+      document.getElementById('content').innerHTML = 
+        '<div class="calendar-grid">' +
+          '<div class="calendar-card catholic">' +
+            '<h2>' + getCrossIcon() + 'Catholicisme</h2>' + 
+            d.c.map(x => '<div class="calendar-item"><span>' + x[1] + '</span><span class="calendar-date">' + x[0] + '</span></div>').join('') + 
+          '</div>' +
+          '<div class="calendar-card islam">' +
+            '<h2>' + getCrescentIcon() + 'Islam</h2>' + 
+            d.i.map(x => '<div class="calendar-item"><span>' + x[1] + '</span><span class="calendar-date">' + x[0] + '</span></div>').join('') + 
+          '</div>' +
+        '</div>';
+      
+      // Mettre à jour l'affichage de l'année dans le titre
+      document.getElementById('currentYearDisplay').innerHTML = '<span class="year-display">' + year + '</span>';
+      
+      // Gérer l'état des boutons
+      const prevBtn = document.getElementById('prevYearBtn');
+      const nextBtn = document.getElementById('nextYearBtn');
+      
+      // Désactiver bouton précédent si on est à l'année minimum
+      if (year <= minYear) {
+        prevBtn.disabled = true;
+      } else {
+        prevBtn.disabled = false;
+      }
+      
+      // Désactiver bouton suivant si on est à l'année maximum
+      if (year >= maxYear) {
+        nextBtn.disabled = true;
+      } else {
+        nextBtn.disabled = false;
+      }
+    }
+
+    function prevYear() {
+      if (currentDisplayYear > minYear) {
+        currentDisplayYear--;
+        showCalendar(currentDisplayYear);
+      }
+    }
+
+    function nextYear() {
+      if (currentDisplayYear < maxYear) {
+        currentDisplayYear++;
+        showCalendar(currentDisplayYear);
+      }
     }
 
     // Initialiser le titre avec les icônes SVG
     document.getElementById('titleIcons').innerHTML = getCrossIcon() + getCrescentIcon();
-
-    const currentYear = new Date().getFullYear();
-    const startYear = 2026;
-    const endYear = 2037;
     
-    let defaultYear = currentYear;
-    if (currentYear < startYear) {
-      defaultYear = startYear;
-    } else if (currentYear > endYear) {
-      defaultYear = endYear;
+    // Définir l'année de départ (année en cours ou 2026 si hors plage)
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    
+    if (currentYear >= minYear && currentYear <= maxYear) {
+      currentDisplayYear = currentYear;
+    } else if (currentYear < minYear) {
+      currentDisplayYear = minYear;
+    } else {
+      currentDisplayYear = maxYear;
     }
-
-    let btns = '';
-    for(let y = startYear; y <= endYear; y++) {
-      btns += '<button data-year="' + y + '" ' + (y === defaultYear ? 'class="active" ' : '') + 'onclick="show(' + y + ')">' + y + '</button>';
-    }
-    document.getElementById('buttons').innerHTML = btns;
-    show(defaultYear);
+    
+    // Ajouter les écouteurs d'événements sur les boutons
+    document.getElementById('prevYearBtn').addEventListener('click', prevYear);
+    document.getElementById('nextYearBtn').addEventListener('click', nextYear);
+    
+    // Afficher le calendrier initial
+    showCalendar(currentDisplayYear);
   </script>
 </section>
 
